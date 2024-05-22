@@ -62,5 +62,14 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "devise"
+  #gem 'bootstrap', '~> 5.3.0'
+  gem 'jquery-rails'
+  gem 'image_processing', '~> 1.2'
+  gem 'rails-i18n'
+  gem 'enum_help'
+  gem 'mini_magick'
+  gem 'kaminari'
+  #gem 'bootstrap5-kaminari-views'
 end
 

@@ -1,24 +1,22 @@
-# README
+# 貯金アプリ(アプリ名未定)
+最終更新日 2024/05/22
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##　使用技術
+* Ruby version: 3.2.2
+* Rails version: 7.0.8.3
 
-Things you may want to cover:
+## アプリ概要
+* お金の管理ができる
+and more...
 
-* Ruby version
+## データベースについて
+Image will be uploaded later.
 
-* System dependencies
+## 機能一覧
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##　追加機能(予定)
+* 支出と収入の記録
+* カード情報の入力
+* 支出のジャンル登録
+* ショートカット機能(定期的にある支出を登録しておくと自動で入力してくれる)
