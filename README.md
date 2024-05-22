@@ -5,6 +5,13 @@
 * Ruby version: 3.2.2
 * Rails version: 7.0.8.3
 
+## サイト色
+- ebebeb
+- FFFFFF
+- FBE913
+- EF5845
+- 1D5376
+
 ## アプリ概要
 * お金の管理ができる
 and more...
