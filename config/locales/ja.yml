@@ -1,0 +1,20 @@
+ja:
+  enums:
+    user:
+      sex:
+        man: "男性"
+        woman: "女性"
+        others: "その他"
+      job:
+        agri_fish: "農林・水産業"
+        mining: "鉱業"
+        construction: "建設業"
+        manufacturing: "製造業"
+        elect_gas: "電気・ガス"
+        transportation: "運輸・通信業"
+        retail: "小売"
+        restaurant: "飲食業"
+        finance_insurance: "金融・保険業"
+        estate: "不動産業"
+        service: "サービス業"
+        others: "その他"
