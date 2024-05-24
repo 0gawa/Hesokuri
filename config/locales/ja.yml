@@ -18,3 +18,12 @@ ja:
         estate: "不動産業"
         service: "サービス業"
         others: "その他"
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      user:
+        sex: "性別"
+        name: "名前"
+        age: "年齢"
+        job: "職業"

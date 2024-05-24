@@ -4,26 +4,33 @@
     <div class="col-lg-10 mx-lg-0 mx-1">
       <h1 class="text-center">ログイン</h1>
 
+      <%= render "public/shared/error_messages"%>
+
       <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
-        <div class="field mb-4">
-          <%= f.label :email, "メールアドレス" %><br />
+        <div class="field mb-4 col-10 offset-1">
+          <%= f.label :email, "メールアドレス", class: "pb-2 ps-2" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
 
-        <div class="field mb-4">
-          <%= f.label :password, "パスワード" %><br />
+        <div class="field mb-4 col-10 offset-1">
+          <%= f.label :name, "名前", class: "pb-2 ps-2" %><br />
+          <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+        </div>
+
+        <div class="field mb-4 col-10 offset-1">
+          <%= f.label :password, "パスワード", class: "pb-2 ps-2" %><br />
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
-          <div class="field mb-4">
+          <div class="field mb-4 col-10 offset-1">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
         <% end %>
 
-        <div class="actions mb-4">
-          <%= f.submit "ログイン" %>
+        <div class="actions mb-4 text-center">
+          <%= f.submit "ログイン", class: "btn btn-success col-5" %>
         </div>
       <% end %>
 

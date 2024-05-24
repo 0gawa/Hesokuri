@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'homes/about', to: 'homes#about', as: "about"
     resources :users, only: [:show, :edit, :update]
+    get '/mypage' => 'users#mypage', as: "mypage"
   end
  
   namespace :admin do
