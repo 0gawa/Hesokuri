@@ -3,6 +3,14 @@ class Public::UsersController < ApplicationController
         @user = User.find(current_user.id)
     end
 
+    def set_money
+        @user = User.find(current_user.id)
+    end
+
+    def create_money
+        
+    end
+
     def show
     end
 

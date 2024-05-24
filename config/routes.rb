@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get 'homes/about', to: 'homes#about', as: "about"
     resources :users, only: [:show, :edit, :update]
     get '/mypage' => 'users#mypage', as: "mypage"
+    get '/mypage/setmoney' => 'users#set_money', as: "set_money"
+    post '/mypage' => 'users#create_money', as: "create_money"
   end
  
   namespace :admin do

@@ -9,8 +9,25 @@
                 <h3 class="text-center pt-2">あなたの貯金額</h3>
 
                 <div class="mt-3">
-                    <span class="fs-2 text-center"><%=@user.money%>円</span>
+                    <p class="fs-2 text-center"><%=@user.money%>円</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-10 offset-1 bg-info box-circle">
+                <%if @user.save_money==0%>
+                <h3 class="text-center pt-2">目標金額</h3>
+                <div class="mt-3">
+                    <p class="fs-6 text-center">目標金額をまだ設定していません。<br>
+                    <%=link_to "こちらから設定しましょう！", set_money_path%></p>
+                </div>
+                <%else%>
+                <h3 class="text-center pt-2">目標貯金額まで</h3>
+                <div class="mt-3">
+                    <p class="fs-2 text-center">あと<span class="ps-3"><%=@user.save_money%>円</span></p>
+                </div>
+                <%end%>
             </div>
         </div>
     </div>
