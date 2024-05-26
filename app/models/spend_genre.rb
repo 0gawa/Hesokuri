@@ -1,4 +1,6 @@
 class SpendGenre < ApplicationRecord
     belongs_to :user
-    belongs_to :spends
+    has_many :spends, dependent: :destroy
+
+    validates :name, presence: true, uniqueness: true
 end

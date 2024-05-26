@@ -10,9 +10,11 @@
             <p class="text-center">例）好きなアーティストのグッズ、飲み会、趣味の映画鑑賞 など...</p>
         </div>
 
+        <%=render 'public/shared/flash'%>
+
         <div class="row mt-3">
             <div class="col-10 offset-1">
-                <%=form_with model: @genre, url: root_path, local: true do |f|%>
+                <%=form_with model: @genre, url: spend_genres_path, local: true do |f|%>
                     <div class="field mb-4 col-10 offset-1">
                         <%= f.label :name, "ジャンル名", class: "pb-2 ps-2" %><br />
                         <%= f.text_field :name, autocomplete: "money", class: "form-control" %>
@@ -28,6 +30,12 @@
         <div class="row mt-4">
             <div class="col-10 offset-1">
                 <h3 class="text-center">登録済みの支出項目一覧</h3>
+
+                <div class="row">
+                    <%@genres.each do |genre|%>
+                        <%=genre.name%>
+                    <%end%>
+                </div>
             </div>
         </div>
     </div>
