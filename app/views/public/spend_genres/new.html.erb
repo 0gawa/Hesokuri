@@ -1,0 +1,35 @@
+<%=render 'layouts/public'%>
+<div class="container">
+<div class="row justify-content-center bg-light bg-circle">
+    <div class="col-lg-10 mx-lg-0 mx-1">
+        <h1 class="text-center pt-3">支出の項目を登録する</h1>
+
+        <div class="row mt-4">
+            <p class="text-center">支出の項目を登録することで、より詳細に支出を管理することができます。</p>
+            <p class="text-center">家賃、光熱費や食費などの項目はすでに登録されています。自分らしい項目を追加してみましょう！</p>
+            <p class="text-center">例）好きなアーティストのグッズ、飲み会、趣味の映画鑑賞 など...</p>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-10 offset-1">
+                <%=form_with model: @genre, url: root_path, local: true do |f|%>
+                    <div class="field mb-4 col-10 offset-1">
+                        <%= f.label :name, "ジャンル名", class: "pb-2 ps-2" %><br />
+                        <%= f.text_field :name, autocomplete: "money", class: "form-control" %>
+                    </div>
+
+                    <div class="actions mb-4 text-center">
+                        <%=f.submit "登録する", class: "btn btn-success col-5"%>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-10 offset-1">
+                <h3 class="text-center">登録済みの支出項目一覧</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

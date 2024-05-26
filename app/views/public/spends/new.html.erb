@@ -1,0 +1,21 @@
+<%=render 'layouts/public'%>
+<div class="container">
+<div class="row justify-content-center bg-light bg-circle">
+    <div class="col-lg-10 mx-lg-0 mx-1">
+        <h1 class="text-center">支出の入力</h1>
+
+        <div class="row">
+        <%=form_with model: @spend, url: root_path, local: true do |f|%>
+            <div class="field mb-4 col-10 offset-1">
+                <%= f.label :money, "支出額", class: "pb-2 ps-2" %><br />
+                <%= f.number_field :money, autocomplete: "money", class: "form-control" %>
+            </div>
+
+            <div class="actions mb-4 text-center">
+                <%=f.submit "登録する", class: "btn btn-success col-5"%>
+            </div>
+        <%end%>
+        </div>
+    </div>
+</div>
+</div>

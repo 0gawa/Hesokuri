@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row justify-content-center bg-light bg-circle">
     <div class="col-lg-10 mx-lg-0 mx-1">
-        <h1 class="text-center">目標金額を設定する</h1>
+        <h1 class="text-center pt-3">目標金額を設定する</h1>
 
         <div class="row mt-4">
             <div class="col-10 offset-1 bg-info box-circle">
@@ -32,6 +32,27 @@
                         <%= f.number_field :smoke, autocomplete: "spend", class: "form-control" %>
                     </div>
                     <%end%>
+                    <div class="field mb-4 col-10 offset-1">
+                        <div class="ps-2 mb-2">貯金する期間</div>
+                        <div class="row">
+                            <div class="col-3">
+                                <%= f.radio_button :time, 0, class:"pb-2" %>
+                                <%= f.label :time_0, "1ヶ月", class:"pb-2" %><br>
+                                <%= f.radio_button :time, 2, class: "pb-2"%>
+                                <%= f.label :time_2, "半年(6ヶ月)", class: "pb-2" %><br>
+                                <%= f.radio_button :time, 4, class: "pb-2"%>
+                                <%= f.label :time_4, "3年", class: "pb-2" %>
+                            </div>
+                            <div class="col-3 offset-1">
+                                <%= f.radio_button :time, 1, checked: "checked", class: "pb-2"%>
+                                <%= f.label :time_1, "3ヶ月", class:"pb-2" %><br>
+                                <%= f.radio_button :time, 3, class: "pb-2"%>
+                                <%= f.label :time_3, "1年間", class: "pb-2"%><br>
+                                <%= f.radio_button :time, 5%>
+                                <%= f.label :time_5, "5年", class: "pb-2" %>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="field mb-4 col-10 offset-1">
                         <div class="ps-2 mb-2">貯金の程度</div>
