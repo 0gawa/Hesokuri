@@ -1,5 +1,5 @@
 # 貯金アプリ(アプリ名未定)
-最終更新日 2024/05/22
+最終更新日 2024/05/27
 
 ## 使用技術
 * Ruby version: 3.2.2
@@ -36,7 +36,7 @@ Image will be uploaded later.
 * ショートカット機能(定期的にある支出を登録しておくと自動で入力してくれる)
 * 月ごとの支出と収入に関する表示
 
-##　作成者メモ
+## 作成者メモ
 ### user
 - View of login
 __Not__: Testing and layout adjustments
