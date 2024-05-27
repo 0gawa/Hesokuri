@@ -4,11 +4,17 @@
     <div class="col-lg-10 mx-lg-0 mx-1">
         <h1 class="text-center">支出の入力</h1>
 
-        <div class="row">
-        <%=form_with model: @spend, url: root_path, local: true do |f|%>
+        <%=render 'public/shared/flash'%>
+
+        <div class="row mt-3">
+        <%=form_with model: @spend, url: spends_path, local: true do |f|%>
             <div class="field mb-4 col-10 offset-1">
                 <%= f.label :money, "支出額", class: "pb-2 ps-2" %><br />
                 <%= f.number_field :money, autocomplete: "money", class: "form-control" %>
+            </div>
+            <div class="field mb-4 col-10 offset-1">
+                <%= f.label :spend_genre_id, "支出の項目", class: "pb-2 ps-2" %><br />
+                <%= f.collection_select :spend_genre_id, SpendGenre.all, :id, :name, {}, {class: 'form-select'} %>
             </div>
 
             <div class="actions mb-4 text-center">
