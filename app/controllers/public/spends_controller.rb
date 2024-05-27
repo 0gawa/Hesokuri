@@ -9,7 +9,9 @@ class Public::SpendsController < ApplicationController
         if @spend.comment.blank?
             @spend.comment="No Comment" #ここでデフォルトコメントを修正できる
         end
+        current_user.money-@spend.money<0 && return 
 
+        @spend.money-=current_user.money
         if @spend.save!
             redirect_to spends_path
         else
@@ -19,7 +21,7 @@ class Public::SpendsController < ApplicationController
     end
 
     def index
-        @genres=Genre.all
+        @spends=current_user.spends.all
     end
 
     private

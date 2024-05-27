@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     post '/mypage' => 'users#create_money', as: "create_money"
     resources :spends, only: [:new, :index, :create]
     resources :spend_genres, except: [:show]
+    resources :incomes, only: [:new, :index, :create]
   end
  
   namespace :admin do
