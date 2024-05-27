@@ -20,10 +20,25 @@ and more...
 Image will be uploaded later.
 
 ## 機能一覧
+エンドユーザー側と管理者側に分けて紹介します.
 
+### エンドユーザー側
+- ログイン
+    - 喫煙者かどうかで機能の一部が利用可能か決まる
+- 支出項目の登録
+
+### 管理者側
+- coming soon
 
 ## 追加機能(予定)
 * 支出と収入の記録
 * カード情報の入力
-* 支出のジャンル登録
 * ショートカット機能(定期的にある支出を登録しておくと自動で入力してくれる)
+* 月ごとの支出と収入に関する表示
+
+##　作成者メモ
+### user
+- View of login
+__Not__: Testing and layout adjustments
+- View of registration of expense items
+__Not__: Testing and layout adjustments
