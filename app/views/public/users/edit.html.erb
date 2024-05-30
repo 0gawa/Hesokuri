@@ -4,12 +4,53 @@
     <div class="col-lg-10 mx-lg-0 mx-1">
         <h1 class="text-center">ユーザー情報</h1>
 
+        <span class="pt-2"><%=render 'public/shared/flash'%></span>
+
         <div class="row mt-3">
-            <div class="col-10 offset-1 bg-info box-circle">
-                <div class="p-3 mb-2">
-                    <h4>あなたの名前</h4>
-                    <div class=""><%=@user.name%></div>
-                </div>
+            <div class="col-10 offset-1 bg-info box-circle py-5">
+                <%= form_with model: @user, url: user_path(@user), local: true do |f| %>
+                    <div class="field mb-4 col-10 offset-1">
+                    <%= f.label :name, "名前", class: "pb-2 ps-2" %><br />
+                    <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+                    </div>
+
+                    <div class="field mb-4 col-10 offset-1">
+                    <%= f.label :email, "メールアドレス", class: "pb-2 ps-2" %><br />
+                    <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+                    </div>
+
+                    <div class="field mb-4 col-10 offset-1">
+                    <span class="ps-2 pb-2">性別</span><br>
+                    <%= f.radio_button :sex, :man, checked: "checked", class:"ms-2" %>
+                    <%= f.label :sex_man, "男性", class:"pe-3 " %>
+                    <%= f.radio_button :sex, :woman %>
+                    <%= f.label :sex_woman, "女性", class:"pe-3" %>
+                    <%= f.radio_button :sex, :others%>
+                    <%= f.label :sex_sex_others, "その他" %>
+                    </div>
+
+                    <div class="field mb-4 col-10 offset-1">
+                    <%= f.label :age, "年齢", class: "pb-2 ps-2" %><br />
+                    <%= f.number_field :age, autocomplete: "age", in: 0..130, class: "form-control" %>
+                    </div>
+
+                    <div class="field mb-4 col-10 offset-1">
+                    <%= f.label :job, "職業", class: "pb-2 ps-2" %><br />
+                    <%= f.select :job, options_for_select(User.jobs.map { |k, v| [t("enums.user.job.#{k}"), k] }, selected: @user.job), { include_blank: "職業を選択してください" }, { class: "form-select" } %>
+                    </div>
+
+                    <div class="field mb-4 col-10 offset-1">
+                    <span class="ps-2 pb-2">喫煙をしますか？</span><br>
+                    <%= f.radio_button :is_smoker, true, class:"ms-2" %>
+                    <%= f.label :is_smoker_true, "はい", class:"pe-3 " %>
+                    <%= f.radio_button :is_smoker, false %>
+                    <%= f.label :is_smoker_false, "いいえ", class:"" %>
+                    </div>
+
+                    <div class="actions text-center">
+                    <%= f.submit "編集する", class: "btn btn-success col-5" %>
+                    </div>
+                <% end %>
 
 
             </div>
