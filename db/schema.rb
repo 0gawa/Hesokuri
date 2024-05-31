@@ -66,11 +66,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_22_095410) do
 
   create_table "spends", force: :cascade do |t|
     t.integer "money", null: false
-    t.integer "genres_id", null: false
     t.string "comment", null: false
     t.integer "user_id", null: false
+    t.integer "spend_genre_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["spend_genre_id"], name: "index_spends_on_spend_genre_id"
     t.index ["user_id"], name: "index_spends_on_user_id"
   end
 
@@ -99,5 +100,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_22_095410) do
   add_foreign_key "incomes", "users"
   add_foreign_key "per_months", "users"
   add_foreign_key "spend_genres", "users"
+  add_foreign_key "spends", "spend_genres"
   add_foreign_key "spends", "users"
 end

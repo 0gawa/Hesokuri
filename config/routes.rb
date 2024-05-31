@@ -7,12 +7,14 @@ Rails.application.routes.draw do
     devise_for :users
     root to: 'homes#top'
     get 'homes/about', to: 'homes#about', as: "about"
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:show, :update]
     get '/mypage' => 'users#mypage', as: "mypage"
     get '/mypage/setmoney' => 'users#set_money', as: "set_money"
     post '/mypage' => 'users#create_money', as: "create_money"
+    get '/mypage/edit'=>'users#edit', as: "edit_user"
     resources :spends, only: [:new, :index, :create]
     resources :spend_genres, except: [:show]
+    resources :incomes, only: [:new, :index, :create]
   end
  
   namespace :admin do
@@ -20,6 +22,4 @@ Rails.application.routes.draw do
   end
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # root "articles#index"
 end

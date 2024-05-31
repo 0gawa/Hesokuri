@@ -11,11 +11,13 @@ class Public::SpendGenresController < ApplicationController
     def create
         @genre=SpendGenre.new(spend_genre_params)
         @genre.user_id=current_user.id
-        if @genre.save!
+        cnt=SpendGenre.all
+        if cnt.count<=10 and @genre.save
             redirect_to spend_genres_path
         else
+            @genres=SpendGenre.all
             flash.now[:warning]="ジャンル名を入力してください"
-            render :new, status: :unprocessable_entity
+            render :new
         end
     end
 
@@ -27,6 +29,8 @@ class Public::SpendGenresController < ApplicationController
     end
 
     def destroy
+        genre=SpendGenre.find(params[:id]).destroy
+        redirect_to spend_genres_path
     end
 
     private

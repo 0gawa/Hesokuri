@@ -31,10 +31,21 @@
             <div class="col-10 offset-1">
                 <h3 class="text-center">登録済みの支出項目一覧</h3>
 
-                <div class="row">
-                    <%@genres.each do |genre|%>
-                        <%=genre.name%>
-                    <%end%>
+                <div class="row mt-3">
+                    <div class="col-10 offset-1">
+                        <table class="table table-hover">
+                            <tr class="table-info">
+                                <th class="text-center">項目名</th>
+                                <th class="text-center">登録日</th>
+                            </tr>
+                        <%@genres.each do |genre|%>
+                            <tr class="table-info">
+                                <td class="text-center"><%=genre.name%></td>
+                                <td class="text-center"><%=l genre.created_at, format: :short%></td> 
+                            </tr>
+                        <%end%>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,10 +4,11 @@ $info: #FBE913;
 $warning: #FBE913;
 $danger: #EF5845;
 $light: #fff; 
-$dark: #2D2C45; 
+$dark: #2D2C45;
 
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import 'custom';
 
 * { font-family: "Noto Sans JP", sans-serif; }
 a {text-decoration: none;}
