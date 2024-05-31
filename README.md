@@ -1,5 +1,5 @@
 # 貯金アプリ(アプリ名未定)
-最終更新日 2024/05/27
+最終更新日 2024/05/31
 
 ## 使用技術
 * Ruby version: 3.2.2
@@ -25,20 +25,21 @@ Image will be uploaded later.
 ### エンドユーザー側
 - ログイン
     - 喫煙者かどうかで機能の一部が利用可能か決まる
+- 支出・収入の登録    
 - 支出項目の登録
 
 ### 管理者側
 - coming soon
 
 ## 追加機能(予定)
-* 支出と収入の記録
 * カード情報の入力
 * ショートカット機能(定期的にある支出を登録しておくと自動で入力してくれる)
 * 月ごとの支出と収入に関する表示
+* Lineでのログイン機能
 
 ## 作成者メモ
 ### user
-- View of login
+- View of login  
 __Not__: Testing and layout adjustments
-- View of registration of expense items
+- View of registration of expense items  
 __Not__: Testing and layout adjustments
