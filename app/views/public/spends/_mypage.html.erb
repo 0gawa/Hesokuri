@@ -1,12 +1,19 @@
 <div class="col-10 offset-1 bg-info box-circle">
-    <h3 class="text-center pt-2">今月の支出</h3>
+    <h3 class="text-center pt-2">最近の支出</h3>
+    <p class="text-center pt-1">直近5件の支出を表示しています。</p>
 
     <div class="row mt-3">
         <div class="col-10 offset-1">
-            <%if @spends.count==0%>
-                <P>今月はまだお金を使っていないようです。</p>
+            <%if spends.count==0%>
+                <p>まだお金を使っていないようです。</p>
             <%else%>
-                
+                <%spends.each do |spend|%>
+                    <div class="bg-info box-circle mb-2 p-2">
+                        <div class="mb-1"><span class="pe-1"><%=spend.spend_genre.name%></span>|
+                        <span class="ps-1"><%= l spend.created_at, format: :short %></span></div>
+                        <div class="fs-5 text-center"><%=spend.money%>円</div>
+                    </div>
+                <%end%>
             <%end%>
         </div>
     </div>

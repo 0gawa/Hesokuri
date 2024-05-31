@@ -1,6 +1,8 @@
 class Public::UsersController < ApplicationController
     def mypage
         @user = User.find(current_user.id)
+        @spends = current_user.spends.all.order(created_at: :desc).limit(5)
+        @incomes = current_user.incomes.all.order(created_at: :desc).limit(5)
     end
 
     def set_money

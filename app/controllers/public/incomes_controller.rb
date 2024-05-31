@@ -4,7 +4,7 @@ class Public::IncomesController < ApplicationController
     end
 
     def index
-        @incomes=current_user.incomes.all
+        @incomes=current_user.incomes.all.order(created_at: :desc)
     end
 
     def create
@@ -15,6 +15,7 @@ class Public::IncomesController < ApplicationController
         end
         if @income.save
             current_user.money+=@income.money
+            current_user.save
             redirect_to incomes_path
         else
             if !@income.money.blank? && @income.money<0
