@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/mypage' => 'users#mypage', as: "mypage"
     get '/mypage/setmoney' => 'users#set_money', as: "set_money"
     post '/mypage' => 'users#create_money', as: "create_money"
+    post '/mypage/setmoney' => 'users#set_save_money', as: "set_save_money"
     get '/mypage/edit'=>'users#edit', as: "edit_user"
     resources :spends, only: [:new, :index, :create]
     resources :spend_genres, except: [:show]

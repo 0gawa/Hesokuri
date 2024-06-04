@@ -17,5 +17,6 @@ class User < ApplicationRecord
 
     validates :name, presence: true, length: {minimum: 2, maximum: 20}
     validates :age, presence: true, numericality: { greater_than_or_equal_to: 0, less_than: 131 }
+    validates :save_money, presence: true, numericality: {greater_than_or_equal_to: 0, less_than: 10**13}
     validates :job, presence: true
 end

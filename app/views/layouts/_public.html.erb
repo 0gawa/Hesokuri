@@ -27,7 +27,7 @@
                         <%= link_to "支出の入力", new_spend_path, class: 'nav-link text-dark' %>
                     </li>
                     <li class="nav-item header_btn me-4">
-                        <%= link_to "ユーザー情報", edit_user_path(current_user.id), class: 'nav-link text-dark' %>
+                        <%= link_to "ユーザー情報", edit_user_path, class: 'nav-link text-dark' %>
                     </li>
                     <li class="nav-item header_btn me-4">
                         <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>

@@ -4,32 +4,51 @@
     <div class="col-lg-10 mx-lg-0 mx-1">
         <h1 class="text-center pt-3">目標金額を設定する</h1>
 
+        <div class="row mt-3">
+            <div class="col-10 offset-1 bg-info box-circle">
+                <h2 class="text-center pt-3">目標金額の設定フォーム</h2>
+            <%=form_with model: @user, url: set_save_money_path, local: true do |f|%>
+                <div class="field mb-4 col-10 offset-1">
+                    <%= f.label :save_money, "目標金額", class: "pb-2 ps-2" %><br />
+                    <%= f.number_field :save_money, autocomplete: "save_money", class: "form-control" %>
+                </div>
+
+                <div class="actions mb-4 text-center">
+                    <%=f.submit "設定する", class: "btn btn-success col-5"%>
+                </div>
+            <%end%>
+            </div>
+        </div>
+
         <div class="row mt-4">
             <div class="col-10 offset-1 bg-info box-circle">
                 <p class="pt-3 text-center">貯金するモチベーションを上げるために目標金額を設定しましょう！<p>
                 <p class="text-center">目標金額が決められない方は以下のツールを利用してみてください!</p>
             </div>
         </div>
+
         <div class="row mt-4">
             <div class="col-10 offset-1 bg-info box-circle">
                 <h2 class="pt-3 text-center">目標決定ツール</h2>
 
                 <p class="pt-2 text-center">以下の項目に入力して、最適な目標貯金額を知ろう！</p>
 
+                <%=render 'public/shared/flash'%>
+
                 <div class="row mt-3">
-                <%=form_with model: @user, url: create_money_path, local: true do |f|%>
+                <%=form_with model: @user, url: create_money_path, method: :post, local: false do |f|%>
                     <div class="field mb-4 col-10 offset-1">
                         <%= f.label :income, "月の収入", class: "pb-2 ps-2" %><br />
                         <%= f.number_field :income, autocomplete: "income", class: "form-control" %>
                     </div>
                     <div class="field mb-4 col-10 offset-1">
-                        <%= f.label :spend, "月の支出", class: "pb-2 ps-2" %><br />
-                        <%= f.number_field :spend, autocomplete: "spend", class: "form-control" %>
+                        <%= f.label :bonus, "ボーナス（年2回を想定）", class: "pb-2 ps-2" %><br />
+                        <%= f.number_field :bonus, autocomplete: "bonus", class: "form-control" %>
                     </div>
                     <%if @user.is_smoker%>
                     <div class="field mb-4 col-10 offset-1">
                         <%= f.label :smoke, "月のタバコ代", class: "pb-2 ps-2" %><br />
-                        <%= f.number_field :smoke, autocomplete: "spend", class: "form-control" %>
+                        <%= f.number_field :smoke, autocomplete: "smoke", class: "form-control" %>
                     </div>
                     <%end%>
                     <div class="field mb-4 col-10 offset-1">
@@ -71,6 +90,8 @@
                 </div>
             </div>
         </div>
+
+        <div id="result"><%=render 'public/users/result_money', result: @result%></div>
     </div>
 </div>
 </div>
