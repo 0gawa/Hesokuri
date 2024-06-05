@@ -42,6 +42,16 @@
             <%=render 'public/incomes/mypage', incomes: @incomes %>
         </div>
 
+        <div class="row mt-4">
+            <div class="col-10 offset-1 bg-info box-circle">
+                <h3 class="text-center pt-2">支出項目ごとの割合</h3>
+                <%if @spend_ratio.nil?%>
+                <p class="text-center">今月はまだ支出が記録されていないため、円グラフが表示できません。</p>
+                <%else%>
+                <div class="my-3"><%= pie_chart @spend_ratio, donut: true, suffix: "％" %></div>
+                <%end%>
+            </div>
+        </div>
     </div>
 </div>
 </div>

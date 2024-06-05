@@ -7,6 +7,14 @@ class Public::UsersController < ApplicationController
         if @diff_money<0
             @diff_money=0
         end
+        month = Time.zone.today
+        spend_costs = current_user.spends.where(created_at: month.all_month)  #一度作成された支出レコードは編集できない点に注意
+        monthly_cost = spend_costs.sum(:money)
+        @spend_ratio = spend_costs.joins(:spend_genre).group("spend_genres.name").sum(:money).sort_by{ |_, v| v }.reverse.to_h
+        @spend_ratio.each do |k,v| 
+            ratio = (v * 100).to_f / monthly_cost
+            @spend_ratio[k] = ratio.round(1)
+        end
     end
 
     def set_money

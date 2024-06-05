@@ -68,5 +68,6 @@ group :development do
   #gem 'mini_magick'
   gem 'kaminari'
   #gem 'bootstrap5-kaminari-views'
+  gem 'chartkick' #円グラフ作成用
 end
 

@@ -3,4 +3,6 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require chartkick
+//= require Chart.bundle
 import "controllers"
