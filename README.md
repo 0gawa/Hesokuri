@@ -1,5 +1,5 @@
 # 貯金アプリ(アプリ名未定)
-最終更新日 2024/05/31
+最終更新日 2024/06/05
 
 ## 使用技術
 * Ruby version: 3.2.2
@@ -23,10 +23,13 @@ Image will be uploaded later.
 エンドユーザー側と管理者側に分けて紹介します.
 
 ### エンドユーザー側
-- ログイン
+- 新規登録・ログイン
     - 喫煙者かどうかで機能の一部が利用可能か決まる
+    - 新規登録後、自動でいくつかの支出項目が作成される
+- 退会処理
 - 支出・収入の登録    
 - 支出項目の登録
+- 目標金額の登録
 
 ### 管理者側
 - coming soon
@@ -37,9 +40,6 @@ Image will be uploaded later.
 * 月ごとの支出と収入に関する表示
 * Lineでのログイン機能
 
-## 作成者メモ
-### user
-- View of login  
-__Not__: Testing and layout adjustments
-- View of registration of expense items  
-__Not__: Testing and layout adjustments
+## 作成者のひとりごと
+- マイページに表示される貯金額を非表示にできるボタンを設置した
+- ユーザーにピッタリな目標金額を教えてくれるツールを作成した.詳細は`users_controller`の17〜52行目を参照.
