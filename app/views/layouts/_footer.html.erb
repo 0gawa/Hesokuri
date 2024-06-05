@@ -10,13 +10,13 @@
             <h6 class="mt-2 mb-3 text-dark">Information</h6>
             <ul class="p-0 list-unstyled">
               <li>
-                <a href="" title="About" class="text-dark">製作者情報</a>
+                <a href="" title="About" class="text-dark">組織について</a>
               </li>
               <li class="pt-2">
-                <a href="" title="informations" class="text-dark">プライバシーポリシー</a>
+                <a href="<%=privacy_path%>" title="informations" class="text-dark">プライバシーポリシー</a>
               </li>
               <li class="pt-2">
-                <%=link_to "退会はこちらから", root_path, class: "text-dark"%>
+                <%=link_to "退会はこちらから", confirm_unsubscribed_path, class: "text-dark"%>
               </li>
             </ul>
           </div>

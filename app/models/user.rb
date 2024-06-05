@@ -19,4 +19,8 @@ class User < ApplicationRecord
     validates :age, presence: true, numericality: { greater_than_or_equal_to: 0, less_than: 131 }
     validates :save_money, presence: true, numericality: {greater_than_or_equal_to: 0, less_than: 10**13}
     validates :job, presence: true
+
+    def active_for_authentication?
+      super && (is_unsubscribed == false)
+    end
 end

@@ -7,7 +7,8 @@
         <div class="row mt-3">
             <div class="col-10 offset-1 bg-info box-circle">
                 <h2 class="text-center pt-3">目標金額の設定フォーム</h2>
-            <%=form_with model: @user, url: set_save_money_path, local: true do |f|%>
+                <%=render 'public/shared/flash'%>
+            <%=form_with model: @user, url: set_save_money_path, method: :patch, local: true do |f|%>
                 <div class="field mb-4 col-10 offset-1">
                     <%= f.label :save_money, "目標金額", class: "pb-2 ps-2" %><br />
                     <%= f.number_field :save_money, autocomplete: "save_money", class: "form-control" %>
