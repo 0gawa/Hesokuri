@@ -7,4 +7,7 @@ class Public::HomesController < ApplicationController
 
     def privacy
     end
+
+    def use
+    end
 end

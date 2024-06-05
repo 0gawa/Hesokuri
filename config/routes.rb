@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'homes/about', to: 'homes#about', as: "about"
     get 'homes/privacy', to: 'homes#privacy', as: 'privacy'
+    get 'homes/terms-of-use', to: 'homes#use', as: 'terms_of_use'
     resources :users, only: [:show, :update]
     get '/mypage' => 'users#mypage', as: "mypage"
     get '/mypage/setmoney' => 'users#set_money', as: "set_money"

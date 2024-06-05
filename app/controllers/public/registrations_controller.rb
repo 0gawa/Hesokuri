@@ -2,7 +2,7 @@
 
 class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  after_action :create_spendGenre, only: [:create]
 
   # GET /resource/sign_up
   # def new
@@ -13,6 +13,19 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # def create
   #   super
   # end
+
+  #新規登録後、支出項目を自動作成
+  def create_spendGenre
+    SpendGenre.create!([
+      {name: "食費", user_id: current_user.id},
+      {name: "電気代", user_id: current_user.id},
+      {name: "水道料金", user_id: current_user.id},
+      {name: "ガス代", user_id: current_user.id},
+      {name: "家賃", user_id: current_user.id},
+      {name: "保険医療費", user_id: current_user.id},
+      {name: "その他", user_id: current_user.id}
+    ])
+  end
 
   # GET /resource/edit
   # def edit
