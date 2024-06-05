@@ -9,14 +9,18 @@ class Public::SpendsController < ApplicationController
         if @spend.comment.blank?
             @spend.comment="No Comment" #ここでデフォルトコメントを修正できる
         end
-        if current_user.money-@spend.money<0
+        is_ok=true
+        if @spend.money.nil?
+            flash.now[:warning]="支出額を入力してください"
+            is_ok=false
+        elsif current_user.money-@spend.money<0
             flash.now[:warning]="支出額が貯金額を超えています"
-            render :new
+            is_ok=false
         else
             current_user.money-=@spend.money
         end
 
-        if @spend.save!
+        if is_ok && @spend.save
             current_user.save
             redirect_to spends_path
         else

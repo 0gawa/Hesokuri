@@ -1,0 +1,14 @@
+<div class="row mt-3">
+    <div class="col-10 offset-1 bg-info box-circle">
+        <h2 class="text-center pt-3 pb-2">目標金額の結果</h2>
+
+        <div class="col-6 offset-3 bg-light box-circle mb-4">
+            <%if result==0%>
+            <p class="fs-2 py-2 text-center">　</p>   <%#なにも出力しないための空白%>
+            <%else%>
+            <p class="fs-2 py-2 text-center"><span class="fs-5">あなたのおすすめ目標金額は</span>
+            <%=result.to_i%>円<span class="fs-5">です</span></p>
+            <%end%>
+        </div>
+    </div>
+</div>
