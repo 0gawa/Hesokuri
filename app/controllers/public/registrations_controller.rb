@@ -16,6 +16,9 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   #新規登録後、支出項目を自動作成
   def create_spendGenre
+    if current_user.nil?
+      return 
+    end
     SpendGenre.create!([
       {name: "食費", user_id: current_user.id},
       {name: "電気代", user_id: current_user.id},
