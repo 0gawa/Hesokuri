@@ -5,6 +5,7 @@ $warning: #FBE913;
 $danger: #EF5845;
 $light: #fff; 
 $dark: #2D2C45;
+$light-yellow: #fff157;
 
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
@@ -14,3 +15,4 @@ $dark: #2D2C45;
 a {text-decoration: none;}
 .bg-circle{border-radius: 10px; padding: 20px 0px;}
 .box-circle{border-radius: 10px;}
+.bg-light-yellow{background-color: $light-yellow;}

@@ -8,7 +8,7 @@
                 <p class="text-center">まだお金を得ていないようです。</p>
             <%else%>
                 <%incomes.each do |income|%>
-                    <div class="bg-info box-circle mb-2 p-2">
+                    <div class="bg-light-yellow box-circle mb-2 p-2">
                         <div class="mb-1"><span class="pe-1"><%=income.comment%></span>|
                         <span class="ps-1"><%= l income.created_at, format: :short %></span></div>
                         <div class="fs-5 text-center"><%=income.money%>円</div>

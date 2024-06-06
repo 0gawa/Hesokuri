@@ -1,25 +1,32 @@
-<h2>Change your password</h2>
+<%=render 'layouts/public'%>
+<div class="container">
+<div class="row justify-content-center bg-light bg-circle">
+    <div class="col-lg-10 mx-lg-0 mx-1">
+      <h1 class="text-center">パスワードの再設定</h1>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+      <%= form_with model: @user, url: user_password_path, local: true do |f| %>
+        <%= render "public/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+        <div class="field mb-4 col-10 offset-1">
+          <%= f.label :password, "新しいパスワード", class: "pb-2 ps-2" %><br />
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %>6文字以上)</em><br />
+          <% end %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control"  %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="field mb-4 col-10 offset-1">
+          <%= f.label :password_confirmation, "新しいパスワード（確認用）", class: "pb-2 ps-2" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"  %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+        <div class="actions mb-4 text-center">
+          <%= f.submit "パスワードを変更する", class: "btn btn-success col-5"  %>
+        </div>
+      <% end %>
 
-<%= render "publics/shared/links" %>
+      <%= render "public/shared/links" %>
+    </div>
+</div>
+</div>
