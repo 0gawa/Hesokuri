@@ -48,6 +48,9 @@ gem "sassc-rails"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rexml'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -62,12 +65,17 @@ group :development do
   gem "devise"
   gem 'bootstrap', '~> 5.3.0'
   gem 'jquery-rails'
-  #gem 'image_processing', '~> 1.2'
   gem 'rails-i18n'
   gem 'enum_help'
   #gem 'mini_magick'
   gem 'kaminari'
-  #gem 'bootstrap5-kaminari-views'
-  gem 'chartkick' #円グラフ作成用
+  #円グラフ作成用
+  gem 'chartkick' 
+  # LINEログインを可能にするgem
+  gem 'omniauth-line'
+  gem 'omniauth-rails_csrf_protection'
+  gem 'dotenv-rails'
+  gem 'line-bot-api'
+
 end
 

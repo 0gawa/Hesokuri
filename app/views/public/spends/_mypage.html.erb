@@ -8,7 +8,7 @@
                 <p class="text-center">まだお金を使っていないようです。</p>
             <%else%>
                 <%spends.each do |spend|%>
-                    <div class="bg-info box-circle mb-2 p-2">
+                    <div class="bg-light-yellow box-circle mb-2 p-2">
                         <div class="mb-1"><span class="pe-1"><%=spend.spend_genre.name%></span>|
                         <span class="ps-1"><%= l spend.created_at, format: :short %></span></div>
                         <div class="fs-5 text-center"><%=spend.money%>円</div>
