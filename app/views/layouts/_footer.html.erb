@@ -5,7 +5,17 @@
         <p>貯金で余裕のあるくらしを</p>
         <%= image_tag '', :size =>'300x75' %>
       </div>
-      <div class="col-md-5"></div>
+
+      <div class="col-md-3"></div>
+
+      <div class="col-md-2">
+        <h6 class="mt-2 mb-3 text-dark">Help</h6>
+        <ul class="p-0 list-unstyled">
+          <li><%=link_to "About", root_path, class: "text-dark"%></li>
+          <li class="pt-2"><%=link_to "使い方", root_path, class: "text-dark"%></li>
+        </ul>
+      </div>
+
       <div class="col-md-3">
         <h6 class="mt-2 mb-3 text-dark">Information</h6>
         <ul class="p-0 list-unstyled">
