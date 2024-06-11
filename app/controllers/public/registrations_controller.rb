@@ -16,18 +16,19 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   #新規登録後、支出項目を自動作成
   def create_spendGenre
-    if current_user.nil?
+    if current_user.nil? || current_user.spend_genres.count >7
       return 
+    else
+      SpendGenre.create!([
+        {name: "食費", user_id: current_user.id},
+        {name: "電気代", user_id: current_user.id},
+        {name: "水道料金", user_id: current_user.id},
+        {name: "ガス代", user_id: current_user.id},
+        {name: "家賃", user_id: current_user.id},
+        {name: "保険医療費", user_id: current_user.id},
+        {name: "その他", user_id: current_user.id}
+      ])
     end
-    SpendGenre.create!([
-      {name: "食費", user_id: current_user.id},
-      {name: "電気代", user_id: current_user.id},
-      {name: "水道料金", user_id: current_user.id},
-      {name: "ガス代", user_id: current_user.id},
-      {name: "家賃", user_id: current_user.id},
-      {name: "保険医療費", user_id: current_user.id},
-      {name: "その他", user_id: current_user.id}
-    ])
   end
 
   # GET /resource/edit
