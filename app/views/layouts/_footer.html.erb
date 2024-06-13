@@ -1,35 +1,35 @@
-<footer class="bg-info pt-5 pb-4 mt-5">
+<footer class="bg-dark pt-5 pb-4 mt-5">
   <div class="container">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <p>貯金で余裕のあるくらしを</p>
+        <p class="text-light">貯金で余裕のあるくらしを</p>
         <%= image_tag '', :size =>'300x75' %>
       </div>
 
       <div class="col-md-3"></div>
 
       <div class="col-md-2">
-        <h6 class="mt-2 mb-3 text-dark">Help</h6>
+        <h6 class="mt-2 mb-3 text-light">Help</h6>
         <ul class="p-0 list-unstyled">
-          <li><%=link_to "About", root_path, class: "text-dark"%></li>
-          <li class="pt-2"><%=link_to "使い方", root_path, class: "text-dark"%></li>
+          <li><%=link_to "About", root_path, class: "text-light"%></li>
+          <li class="pt-2"><%=link_to "使い方", root_path, class: "text-light"%></li>
         </ul>
       </div>
 
       <div class="col-md-3">
-        <h6 class="mt-2 mb-3 text-dark">Information</h6>
+        <h6 class="mt-2 mb-3 text-light">Information</h6>
         <ul class="p-0 list-unstyled">
           <li>
-            <a href="" title="About" class="text-dark">組織について</a>
+            <a href="" title="About" class="text-light">組織について</a>
           </li>
           <li class="pt-2">
-            <a href="<%=terms_of_use_path%>" title="Terms-of-Use" class="text-dark">利用規約</a>
+            <a href="<%=terms_of_use_path%>" title="Terms-of-Use" class="text-light">利用規約</a>
           </li>
           <li class="pt-2">
-            <a href="<%=privacy_path%>" title="informations" class="text-dark">プライバシーポリシー</a>
+            <a href="<%=privacy_path%>" title="informations" class="text-light">プライバシーポリシー</a>
           </li>
           <li class="pt-2">
-            <%=link_to "退会はこちらから", confirm_unsubscribed_path, class: "text-dark"%>
+            <%=link_to "退会はこちらから", confirm_unsubscribed_path, class: "text-light"%>
           </li>
         </ul>
       </div>

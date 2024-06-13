@@ -1,39 +1,111 @@
 <%=render 'layouts/public'%>
 <div class="container">
 <div class="row justify-content-center bg-light bg-circle">
-    <div class="col-lg-10 mx-lg-0 mx-1">
+    <div class="col-lg-11 mx-auto">
       <h1 class="text-center">マイページ</h1>
 
         <div class="row mt-4">
-            <div class="col-10 offset-1 bg-info box-circle">
-                <h3 class="text-center pt-2" id="eye-icon">あなたの貯金額
+            <div class="col-10 offset-1 border-bottom border-black">
+                <h4 class="display-inline ps-2 pt-2" id="eye-icon">現在の貯金額
                 <%=link_to mypage_path, class: "ps-1", remote: true do%>
                     <i class="fa-regular fa-eye" style="color: #2c2c30;"></i>
                 <%end%>
-                </h3>
+                </h4>
 
-                <div class="mt-3 px-2 col-auto col-10 offset-1 bg-light-yellow box-circle" id="your-money">
-                    <p class="fs-2 text-center"><%=@user.money%>円</p>
-                </div>
+                <span class="" id="your-money">
+                    <p class="fs-3 text-center"><span class="pe-1">¥</span><%=@user.money%>円</p>
+                </span>
             </div>
         </div>
 
         <div class="row mt-4">
-            <div class="col-10 offset-1 bg-info box-circle">
+            <div class="col-10 offset-1 border-bottom border-black">
+                <h4 class="display-inline ps-2 pt-2">前日比</h4>
+                <span class="" id="">
+                    <%if @yesterday_money < 0%>
+                    <p class="fs-3 text-center"><span class="pe-1"><i class="bi bi-arrow-down-right-circle"></i>¥</span><%=-@yesterday_money%>円down</p>
+                    <%elsif @yesterday_money == 0%>
+                    <p class="fs-3 text-center"><span class="pe-1"><i class="bi bi-arrow-right"></i>¥</span>0円</p>
+                    <%else%>
+                    <p class="fs-3 text-center"><span class="pe-1"><i class="bi bi-arrow-up-right-circle"></i>¥</span><%=@yesterday_money%>円up</p>
+                    <%end%>
+                </span>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-10 offset-1 border-bottom border-black">
                 <%if @user.save_money==0%>
-                <h3 class="text-center pt-2">目標金額</h3>
-                <div class="mt-3">
+                <h4 class="display-inline ps-2 pt-2">目標金額</h4>
+                <span class="mt-3">
                     <p class="fs-6 text-center">目標金額をまだ設定していません。<br>
                     <%=link_to "こちらから設定しましょう！", set_money_path%></p>
-                </div>
+                </span>
                 <%else%>
-                <h3 class="text-center pt-2">目標貯金額まで</h3>
-                <div class="mt-3 px-2 mx-auto  col-10 offset-1 col-auto bg-light-yellow box-circle">
-                    <p class="fs-2 text-center">あと<span class="ps-3"><%=@diff_money%>円</span></p>
-                </div>
+                <h4 class="display-inline ps-2 pt-2">目標貯金額まで</h4>
+                <span class="">
+                    <p class="fs-3 text-center">残り<span class="pe-1">¥</span><%=@diff_money%>円</p>
+                </span>
                 <%end%>
             </div>
         </div>
+        
+        <div class="row mt-4">
+            <div class="col-10 offset-1">
+            <div class="row justify-content-center mx-md-0">
+                <div class="col-md-5 mb-4 mb-md-0 bg-secondary bg-radius-10 p-3">
+                    <h4 class="text-center pt-2">今週の支出額</h4>
+                    <div class="">
+                        <%if @ratio_spend<100%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_spend%>％ <i class="bi bi-arrow-down-right-circle"></i></p>
+                        <%elsif @ratio_spend>100%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_spend%>％ <i class="bi bi-arrow-up-right-circle"></i></p>
+                        <%else%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_spend%>％ <i class="bi bi-arrow-right"></i></p>
+                        <%end%>
+
+                        <p class="text-center fs-4">合計額：　¥<%=@week_spends.sum(:money)%>円</p>
+                        <div class="row mt-3 mb-2"><%=link_to "もっと見る", spends_path, class: "btn btn-dark text-center col-4 mx-auto"%></div>
+                    </div>
+                </div>
+                <div class="col-md-5 p-3 offset-md-1 mb-md-0 bg-secondary bg-radius-10">
+                    <h4 class="text-center pt-2">今週の収入額</h4>
+                    <div class="">
+                        <%if @ratio_income<100%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_income%>％ <i class="bi bi-arrow-down-right-circle"></i></p>
+                        <%elsif @ratio_income>100%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_income%>％ <i class="bi bi-arrow-up-right-circle"></i></p>
+                        <%else%>
+                        <p class="text-center fs-4">前週比：　<%=@ratio_income%>％ <i class="bi bi-arrow-right"></i></p>
+                        <%end%>
+
+                        <p class="text-center fs-4">合計額：　¥<%=@week_incomes.sum(:money)%>円</p>
+                        <div class="row mt-3 mb-2"><%=link_to "もっと見る", incomes_path, class: "btn btn-dark text-center col-4 mx-auto"%></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-5 offset-md-1">
+                <h3 class="text-center pt-2">支出項目ごとの割合</h3>
+                <%if @spend_ratio.empty?%>
+                <p class="text-center">今月はまだ支出が記録されていないため、円グラフが表示できません。</p>
+                <%else%>
+                <div class="my-3 pb-2"><%= pie_chart @spend_ratio, donut: true, suffix: "％" %></div>
+                <%end%>
+            </div>
+            <div class="col-md-5 ms-3">
+                <h3 class="text-center pt-2">支出額の推移</h3>
+                <%if @line_chart_data.empty?%>
+                <p class="text-center">今月はまだ支出が記録されていないため、グラフが表示できません。</p>
+                <%else%>
+                <div class="my-3 pb-2"><%= line_chart @line_chart_data %></div>
+                <%end%>
+            </div>
+        </div>
+
 
         <div class="row mt-4">
             <%=render 'public/spends/mypage', spends: @spends %>
@@ -42,16 +114,6 @@
             <%=render 'public/incomes/mypage', incomes: @incomes %>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-10 offset-1 bg-info box-circle">
-                <h3 class="text-center pt-2">支出項目ごとの割合</h3>
-                <%if @spend_ratio.nil?%>
-                <p class="text-center">今月はまだ支出が記録されていないため、円グラフが表示できません。</p>
-                <%else%>
-                <div class="my-3 pb-2"><%= pie_chart @spend_ratio, donut: true, suffix: "％" %></div>
-                <%end%>
-            </div>
-        </div>
     </div>
 </div>
 </div>

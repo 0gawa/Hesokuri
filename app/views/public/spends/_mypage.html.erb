@@ -1,4 +1,4 @@
-<div class="col-10 offset-1 bg-info box-circle">
+<div class="col-10 offset-1">
     <h3 class="text-center pt-2">最近の支出</h3>
     <p class="text-center pt-1">直近5件の支出を表示しています。</p>
 
@@ -8,7 +8,7 @@
                 <p class="text-center">まだお金を使っていないようです。</p>
             <%else%>
                 <%spends.each do |spend|%>
-                    <div class="bg-light-yellow box-circle mb-2 p-2">
+                    <div class="border-bottom mb-2 p-2">
                         <div class="mb-1"><span class="pe-1"><%=spend.spend_genre.name%></span>|
                         <span class="ps-1"><%= l spend.created_at, format: :short %></span></div>
                         <div class="fs-5 text-center"><%=spend.money%>円</div>
@@ -16,7 +16,7 @@
                 <%end%>
             <%end%>
 
-            <div class="row mb-2"><%=link_to "もっと見る", spends_path, class: "btn btn-info text-center"%></div>
+            <div class="row mt-4 mb-2"><%=link_to "もっと見る", spends_path, class: "btn btn-dark text-center"%></div>
         </div>
     </div>
 </div>

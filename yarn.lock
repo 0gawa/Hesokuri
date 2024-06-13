@@ -4,46 +4,56 @@
 
 "@kurkle/color@^0.3.0":
   version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
+  resolved "https://registry.npmjs.org/@kurkle/color/-/color-0.3.2.tgz"
   integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
+
+"@popperjs/core@^2.11.7":
+  version "2.11.8"
+  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
+bootstrap-icons@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.11.3.tgz"
+  integrity sha512-+3lpHrCw/it2/7lBL15VR0HEumaBss0+f/Lb6ZvHISn1mlK83jjFpooTLsMWbIjJMDjDjOExMsTxnXSIT4k4ww==
 
 bootstrap@5.3.0:
   version "5.3.0"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.0.tgz#0718a7cc29040ee8dbf1bd652b896f3436a87c29"
+  resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.0.tgz"
   integrity sha512-UnBV3E3v4STVNQdms6jSGO2CvOkjUMdDAVR2V5N4uCMdaIkaQjbcEAMqRimDHIs4uqBYzDAKCQwCB+97tJgHQw==
 
-chart.js@4, chart.js@^4.4.3:
+chart.js@^4.4.3, chart.js@>=2.8.0, chart.js@4:
   version "4.4.3"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.4.3.tgz#3b2e11e7010fefa99b07d0349236f5098e5226ad"
+  resolved "https://registry.npmjs.org/chart.js/-/chart.js-4.4.3.tgz"
   integrity sha512-qK1gkGSRYcJzqrrzdR6a+I0vQ4/R+SoODXyAjscQ/4mzuNzySaMCd+hyVxitSY1+L2fjPD1Gbn+ibNqRmwQeLw==
   dependencies:
     "@kurkle/color" "^0.3.0"
 
 chartjs-adapter-date-fns@>=3:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/chartjs-adapter-date-fns/-/chartjs-adapter-date-fns-3.0.0.tgz#c25f63c7f317c1f96f9a7c44bd45eeedb8a478e5"
+  resolved "https://registry.npmjs.org/chartjs-adapter-date-fns/-/chartjs-adapter-date-fns-3.0.0.tgz"
   integrity sha512-Rs3iEB3Q5pJ973J93OBTpnP7qoGwvq3nUnoMdtxO+9aoJof7UFcRbWcIDteXuYd1fgAvct/32T9qaLyLuZVwCg==
 
 chartkick@^5.0.1:
   version "5.0.1"
-  resolved "https://registry.yarnpkg.com/chartkick/-/chartkick-5.0.1.tgz#f557ff8560f974343dc65c7fc34ce1e8326d8ee7"
+  resolved "https://registry.npmjs.org/chartkick/-/chartkick-5.0.1.tgz"
   integrity sha512-4F3tWI3eBQgnjCYZIZ+fHOaJuNyxeyhDE2Tm+voOWB19hDjSJceys/spzN52DOn8bWepNESGXvPVTGU1jeFsbA==
   optionalDependencies:
     chart.js "4"
     chartjs-adapter-date-fns ">=3"
     date-fns ">=2"
 
-date-fns@>=2:
+date-fns@>=2, date-fns@>=2.0.0:
   version "3.6.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-3.6.0.tgz#f20ca4fe94f8b754951b24240676e8618c0206bf"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-3.6.0.tgz"
   integrity sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==
 
 jquery@^3.7.1:
   version "3.7.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
+  resolved "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
 popper.js@^1.16.1:
   version "1.16.1"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  resolved "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
   integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
