@@ -7,7 +7,7 @@
         <div class="row mt-3">
             <div class="col-10 offset-1 pt-2">
                 <%@incomes.each do |income|%>
-                    <div class="bg-info box-circle mb-3 p-2">
+                    <div class="bg-info bg-radius-10 mb-3 p-2">
                         <div class="mb-1"><span class="pe-1"><%=income.comment%></span>|
                         <span class="ps-1"><%= l income.created_at, format: :short %></span></div>
                         <div class="fs-4 text-center"><%=income.money%>円</div>

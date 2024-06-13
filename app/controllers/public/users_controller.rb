@@ -2,6 +2,22 @@ class Public::UsersController < ApplicationController
     def mypage
         @user = User.find(current_user.id)
         @spends = current_user.spends.all.order(created_at: :desc).limit(5)
+        @yesterday_money = current_user.incomes.today.sum(:money) - current_user.spends.today.sum(:money)
+
+        @line_chart_data = []
+        base_days = [*Date.current - 1.week .. Date.current]
+        base_days.each do |base_day|
+          day_sum = current_user.spends.where(created_at: base_day.beginning_of_day...base_day.end_of_day).sum(:money)
+          @line_chart_data << [base_day.strftime('%Y/%m/%d').to_s, day_sum]
+        end
+
+        @week_spends = current_user.spends.this_week
+        @week_incomes = current_user.incomes.this_week
+        @last_week_spends = current_user.spends.last_week
+        @last_week_incomes = current_user.incomes.last_week
+        @ratio_spend = @week_spends.sum(:money)*100 / sum_price(@last_week_spends)
+        @ratio_income = @week_incomes.sum(:money)*100 / sum_price(@last_week_incomes)
+
         @incomes = current_user.incomes.all.order(created_at: :desc).limit(5)
         @diff_money=@user.save_money-@user.money
         if @diff_money<0
@@ -15,6 +31,7 @@ class Public::UsersController < ApplicationController
             ratio = (v * 100).to_f / monthly_cost
             @spend_ratio[k] = ratio.round(1)
         end
+
     end
 
     def set_money
@@ -104,5 +121,13 @@ class Public::UsersController < ApplicationController
     end
     def save_money_params
         params.require(:user).permit(:save_money)
+    end
+
+    def sum_price(tmp)    #イテラブルである必要があることに注意
+        sum = tmp.sum(:money)
+        if sum.nil? || sum == 0
+            sum = 100
+        end
+        return sum
     end
 end
