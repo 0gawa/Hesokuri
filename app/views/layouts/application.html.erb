@@ -20,4 +20,11 @@
     <%= yield %>
     <%=render 'layouts/footer'%>
   </body>
+  <%if admin_signed_in? && !user_signed_in?%>
+    <script>
+      $(function(){
+        $("footer").html('<%=j(render 'layouts/admin_footer')%>')
+      });
+    </script>
+  <%end%>
 </html>
