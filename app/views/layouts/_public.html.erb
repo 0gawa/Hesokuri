@@ -3,11 +3,11 @@
     <div class="container-fluid">
         <% if user_signed_in? %>
             <%=link_to mypage_path, class: "navbar-brand p-1" do%>
-                <%= image_tag '', :size =>'300x75' %>
+                <%= image_tag 'rec_logo.jpg', :size =>'300x75' %>
             <% end %>
         <%else%>
             <%=link_to root_path, class: "navbar-brand p-1" do%>
-                <%= image_tag '', :size =>'300x75' %>
+                <%= image_tag 'rec_logo.jpg', :size =>'300x75' %>
             <% end %>
         <%end%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
