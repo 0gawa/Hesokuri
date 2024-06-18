@@ -11,7 +11,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ea4f70a08.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+    <link rel="icon" href="app/assets/images/sq_logo.png">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
@@ -20,4 +21,11 @@
     <%= yield %>
     <%=render 'layouts/footer'%>
   </body>
+  <%if admin_signed_in? && !user_signed_in?%>
+    <script>
+      $(function(){
+        $("footer").html('<%=j(render 'layouts/admin_footer')%>')
+      });
+    </script>
+  <%end%>
 </html>

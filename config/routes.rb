@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   end
  
   namespace :admin do
-    get 'dashboards', to: 'dashboards#index'
+    root to: 'homes#top'
+    get 'dashboards', to: 'dashboards#index', as: "dashboards"
   end
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
