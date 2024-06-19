@@ -40,9 +40,12 @@ a {text-decoration: none;}
     background-size: cover;background-position: center;
 }
 
+.of-cover{object-fit: cover;}
+
 //background-color
 .bg-trans-black{background-color: #111111a1;}
 .bg-trans-light{background-color: #ffffff85;}
+.bg-trans-light-yellow{background-color: #f2f614df;}
 
 //font-size
 .fs-big-title{font-size: 50px;}
@@ -54,16 +57,20 @@ a {text-decoration: none;}
 
 .h-200{height: 200px;}
 .h-250{height: 250px;}
+.h-250-md-400{height: 200px;}
 .h-350{height: 350px;}
 .h-400{height: 400px;}
 .h-450{height: 450px;}
 .h-300-md-450{height: 300px;}
 .h-500{height: 500px;}
 .h-300-md-550{height: 300px}
+.h-300-md-650{height: 300px}
 
 @media screen and (max-width: 720px) {
+    .h-250-md-400{height: 400px;}
 	.h-300-md-450{height: 450px;}
     .h-300-md-550{height: 550px}
+    .h-300-md-650{height: 650px}
 }
 
 //image
