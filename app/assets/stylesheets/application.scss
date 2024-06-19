@@ -17,3 +17,54 @@ a {text-decoration: none;}
 .bg-radius-10{border-radius: 10px;}
 .bg-circle{border-radius: 10px; padding: 20px 0px;}
 .display-inline{display: inline;}
+
+//toppage-css
+.bg-pic-com{
+    background-image: image-url('computer.jpg');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
+.bg-pic-bit{
+    background-image: image-url('top-bit.jpg');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
+.bg-pic-man{
+    background-image: image-url('man10000.jpg');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
+.bg-pic-office{
+    background-image: image-url('office-computer.jpg');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
+.bg-pic-ai-office{
+    background-image: image-url('ai_office.jpg');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
+
+//background-color
+.bg-trans-black{background-color: #111111a1;}
+.bg-trans-light{background-color: #ffffff85;}
+
+//font-size
+.fs-big-title{font-size: 50px;}
+.fs-50px{font-size: 50px;}
+
+//size
+.w-66{width: 66%;}
+.w-33{width: 33%;}
+
+.h-200{height: 200px;}
+.h-250{height: 250px;}
+.h-350{height: 350px;}
+.h-400{height: 400px;}
+.h-450{height: 450px;}
+.h-300-md-450{height: 300px;}
+.h-500{height: 500px;}
+.h-300-md-550{height: 300px}
+
+@media screen and (max-width: 720px) {
+	.h-300-md-450{height: 450px;}
+    .h-300-md-550{height: 550px}
+}
+
+//image
+.bg-po-right{background-position: right;}
