@@ -6,3 +6,10 @@
 //= require chartkick
 //= require Chart.bundle
 import "controllers"
+import "./toppage.js"
+import jquery from "jquery"
+window.$ = jquery
+
+$(function() {
+  console.log("Hello Rails7!");
+})

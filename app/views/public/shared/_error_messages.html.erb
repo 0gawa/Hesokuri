@@ -1,6 +1,6 @@
 <% if resource.errors.any? %>
   <div class="row my-3">
-    <div id="error_explanation" data-turbo-cache="false" class="col-10 offset-1 p-2 bg-danger box-circle">
+    <div id="error_explanation" data-turbo-cache="false" class="col-10 offset-1 p-2 bg-danger bg-radius-10">
       <h5 class="ps-2">
         <%= I18n.t("errors.messages.not_saved",
                   count: resource.errors.count,

@@ -1,8 +1,95 @@
 <%=render 'layouts/public'%>
-<div class="container">
-    <div class="row justify-content-center bg-light bg-circle">
-        <div class="col-lg-10 mx-lg-0 mx-1">
-            <h1 class="text-center">トップページ</h1>
+
+<div class="w-100 ps-md-5 bg-pic-com justify-content-center" id="top-bg-first">
+    <div class="container">
+    <div class="row h-350">
+        <div class="col-md-2"></div>
+        <div class="col-10">
+            <h1 class="ps-md-5 pt-md-5 fs-big-title  text-light bg-radius-10">貯金を<br>もっと簡単に</h1>
+            <p class="pt-2 text-light ps-md-5">(App名)を使って、貯金を簡単に楽しく管理しましょう。</p>
+
+            <%=link_to "詳しくはこちら", about_path, class: "btn btn-light ms-5"%>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row mt-md-5 h-200">
+        <h1 class="text-center pt-md-5 text-light">お金の浪費を今すぐに減らせる<br>貯金が簡単にできる<br>そんなアプリを今すぐ試してみませんか？</h1>
+    </div>
+    <div class="row h-300-md-450 justify-content-center">
+        <div class="col-md-3 me-2 mt-md-0 mt-2 mt-md-5">
+            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+            <h3 class="text-center text-light pt-3">日常の浪費を簡単に管理</h3>
+            <p class="text-center text-light  pt-2">hogehogehogehogehoge</p>
+        </div>
+        <div class="col-md-3 me-2 mt-md-0 mt-3 mt-md-5">
+            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+            <h3 class="text-center text-light pt-3">貯金と支出の一括管理</h3>
+            <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
+        </div>
+        <div class="col-md-3 mt-md-0 mt-3 mt-md-5">
+            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+            <h3 class="text-center text-light  pt-3">家計簿アプリだと継続ができない</h3>
+            <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
         </div>
     </div>
 </div>
+
+<div class="w-100 bg-header mt-md-0 mt-5">
+    <div class="container">
+    <div class="row h-300-md-550 justify-content-center pt-md-5">
+        <div class="text-center col-md-5 mt-3 mt-md-0">
+        <%=image_tag 'iphone12.jpg', class: "w-100 bg-po-right h-300"%>
+        </div>
+        <div class="col-md-7 mt-md-0 mt-3">
+            <h3 class="text-center fs-big-title">今を大切に</h3>
+            <p class="text-center fs-5 pt-3">１つのアプリで<br>数分間を貴重な一瞬へ</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<div class="w-100">
+<div class="container mt-5">
+<div class="row text-center pt-3">
+    <h3 class="text-light">アプリの特徴</h3>
+    <p class="text-light pt-1">手頃なアプリの独自の機能や使い方、競合サービスとの比較</p>
+</div>
+</div>
+
+<div class="bg-pic-ai-office">
+<div class="row justify-content-center bg-trans-black">
+    <div class="col-md-3 me-md-2 mt-3">
+        <h3 class="text-light text-center">機能</h3>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>
+    </div>
+    <div class="col-md-3 me-md-2 mt-md-3">
+        <h3 class="text-light text-center">使い方</h3>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>
+    </div>
+    <div class="col-md-3 me-md-2 mt-md-3">
+        <h3 class="text-light text-center">競合サービス</h3>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <p class="text-center text-light">hoge</p>
+        <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>   
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+$(function(){
+    $("body").removeClass('bg-secondary')
+    $("body").addClass('bg-black')
+});
+</script>
