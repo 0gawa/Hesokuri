@@ -39,6 +39,9 @@ a {text-decoration: none;}
     background-image: image-url('ai_office.jpg');background-repeat: no-repeat;
     background-size: cover;background-position: center;
 }
+@media screen and (min-width: 992px) {
+    .fs-lg-60px{font-size: 60px;}
+}
 
 .of-cover{object-fit: cover;}
 
@@ -66,11 +69,17 @@ a {text-decoration: none;}
 .h-300-md-550{height: 300px}
 .h-300-md-650{height: 300px}
 
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 720px) {
     .h-250-md-400{height: 400px;}
 	.h-300-md-450{height: 450px;}
-    .h-300-md-550{height: 550px}
-    .h-300-md-650{height: 650px}
+    .h-300-md-550{height: 550px;}
+    .h-300-md-600{height: 600px;}
+    .h-300-md-650{height: 650px;}
+}
+@media screen and (min-width: 992px) {
+    .h-lg-300{height: 300px;}
+    .h-lg-350{height: 350px;}
+    .h-lg-500{height: 500px;}
 }
 
 //image
