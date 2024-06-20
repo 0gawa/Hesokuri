@@ -6,9 +6,10 @@
 //= require chartkick
 //= require Chart.bundle
 import "controllers"
-import "./toppage.js"
 import jquery from "jquery"
 window.$ = jquery
+import "./jquery.inview.min.js"
+import "./toppage.js"
 
 $(function() {
   console.log("Hello Rails7!");

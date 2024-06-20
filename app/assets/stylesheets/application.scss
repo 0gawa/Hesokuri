@@ -10,6 +10,7 @@ $line-green: #06C755;
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import 'custom';
+@import 'homes';
 
 * { font-family: "Noto Sans JP", sans-serif; }
 a {text-decoration: none;}
@@ -51,8 +52,9 @@ a {text-decoration: none;}
 .bg-trans-light-yellow{background-color: #f2f614df;}
 
 //font-size
-.fs-big-title{font-size: 50px;}
+.fs-40px{font-size: 40px;}
 .fs-50px{font-size: 50px;}
+.fs-60px{font-size: 60px;}
 
 //size
 .w-66{width: 66%;}
@@ -60,27 +62,29 @@ a {text-decoration: none;}
 
 .h-200{height: 200px;}
 .h-250{height: 250px;}
-.h-250-md-400{height: 200px;}
+.h-300{height: 300px;}
 .h-350{height: 350px;}
 .h-400{height: 400px;}
-.h-450{height: 450px;}
-.h-300-md-450{height: 300px;}
 .h-500{height: 500px;}
-.h-300-md-550{height: 300px}
-.h-300-md-650{height: 300px}
+.h-600{height: 600px;}
+.h-700{height: 700px;}
 
 @media screen and (min-width: 720px) {
-    .h-250-md-400{height: 400px;}
-	.h-300-md-450{height: 450px;}
-    .h-300-md-550{height: 550px;}
-    .h-300-md-600{height: 600px;}
-    .h-300-md-650{height: 650px;}
+    .h-md-600{height: 600px;}
+    .h-md-500{height: 500px;}
+
 }
 @media screen and (min-width: 992px) {
+    .h-lg-200{height: 200px;}
     .h-lg-300{height: 300px;}
     .h-lg-350{height: 350px;}
+    .h-lg-400{height: 400px;}
+    .h-lg-450{height: 450px;}
     .h-lg-500{height: 500px;}
 }
+
+//line-height
+.lh-500{line-height: 500px;}
 
 //image
 .bg-po-right{background-position: right;}

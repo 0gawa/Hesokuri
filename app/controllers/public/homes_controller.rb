@@ -10,4 +10,7 @@ class Public::HomesController < ApplicationController
 
     def use
     end
+
+    def organization
+    end
 end

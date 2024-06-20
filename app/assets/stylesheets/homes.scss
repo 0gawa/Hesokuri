@@ -1,0 +1,28 @@
+$light-yellow: #f1f614;
+
+.border-radius-300 {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    background-color: $light-yellow;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+@media screen and (min-width: 720px) {
+    .top-title-80{line-height: 80px;}
+}
+
+//animation
+.js-fade {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 2s,visibility 2s, transform 2s;
+}
+.inview {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}

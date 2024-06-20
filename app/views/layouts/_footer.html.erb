@@ -8,7 +8,7 @@
 
       <div class="col-md-3"></div>
 
-      <div class="col-md-2">
+      <div class="col-md-2 mt-3 mt-md-0">
         <h6 class="mt-2 mb-3 text-light">Help</h6>
         <ul class="p-0 list-unstyled">
           <li><%=link_to "About", root_path, class: "text-light"%></li>
@@ -20,7 +20,7 @@
         <h6 class="mt-2 mb-3 text-light">Information</h6>
         <ul class="p-0 list-unstyled">
           <li>
-            <a href="" title="About" class="text-light">組織について</a>
+            <a href="<%=organization_path%>" title="About" class="text-light">組織について</a>
           </li>
           <li class="pt-2">
             <a href="<%=terms_of_use_path%>" title="Terms-of-Use" class="text-light">利用規約</a>
@@ -35,5 +35,7 @@
       </div>
     </div>
   </div>
+
+  <div class="mt-3 text-center"><p><i class="fa-regular fa-copyright fa-lg" style="color: #ffffff;"></i><span class="ps-2 text-light">CHOKIN.INC</span></p><div>
 </footer>
 
