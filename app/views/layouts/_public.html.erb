@@ -1,53 +1,72 @@
-<header class="mb-5">
-  <nav class="navbar navbar-expand-lg bg-header">
-    <div class="container-fluid">
+<header class="mb-5 bg-header">
+    <span class="d-flex">
         <% if user_signed_in? %>
-            <%=link_to mypage_path, class: "navbar-brand p-1" do%>
-                <%= image_tag 'rec_logo.jpg', :size =>'300x75' %>
-            <% end %>
-        <%else%>
-            <%=link_to root_path, class: "navbar-brand p-1" do%>
-                <%= image_tag 'rec_logo.jpg', :size =>'300x75' %>
-            <% end %>
+            <span class="pe-3 btn fs-2 button-nav-z" id="button-nav"><i class="bi bi-list"></i></span>
         <%end%>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <% if user_signed_in? %>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "マイページ", mypage_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "収入の入力", new_income_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "支出の入力", new_spend_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "ユーザー情報", edit_user_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
-                    </li>
-                <% else %>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "トップ", root_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "Hesokuriとは", about_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
-                    </li>
-                    <li class="nav-item header_btn me-4">
-                        <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
-                    </li>
+        <span class="py-2">
+            <!--ブランドロゴ長方形-->
+            <% if user_signed_in? %>
+                <%=link_to mypage_path, class: "" do%>
+                    <%= image_tag 'rec_logo.jpg', :size =>'200x50' %>
                 <% end %>
-            </ul>
-        </div>
-    </div>
-  </nav>
+            <%else%>
+                <%=link_to root_path, class: "" do%>
+                    <%= image_tag 'rec_logo.jpg', :size =>'200x50' %>
+                <% end %>
+            <%end%>
+        </span>
+    </span>
 </header>
+
+<!--メニュー用-->
+<nav class="nav-ph">
+    <ul class="">
+        <% if user_signed_in? %>
+            <li class="">
+                <%= link_to "マイページ", mypage_path, class: '' %>
+            </li>
+            <li class="">
+                <%= link_to "収入の入力", new_income_path, class: '' %>
+            </li>
+            <li class="">
+                <%= link_to "支出の入力", new_spend_path, class: '' %>
+            </li>
+            <li>
+                <%=link_to "目標金額の設定・編集", set_money_path, class: ''%>
+            </li>
+        <% else %>
+            <li class="">
+                <%= link_to "トップ", root_path, class: '' %>
+            </li>
+            <li class="">
+                <%= link_to "Hesokuriとは", about_path, class: '' %>
+            </li>
+            <li class="">
+                <%= link_to "新規登録", new_user_registration_path, class: '' %>
+            </li>
+            <li class="">
+                <%= link_to "ログイン", new_user_session_path, class: '' %>
+            </li>
+        <% end %>
+    </ul>
+</nav>
+
+<script>
+    $(function(){
+        var duration = 300;
+        var nav = $(".nav-ph");
+        var navButton = $("#button-nav")
+        .on("click", function(){
+            nav.toggleClass("open");
+            if(nav.hasClass("open")){
+                nav.stop(true).animate({left: "-70px"}, duration);
+                navButton.find("i").toggleClass("bi-list");
+                navButton.find("i").toggleClass("bi-x-lg");
+            }else{
+                nav.stop(true).animate({left: "-350px"}, duration);
+                navButton.find("i").toggleClass("bi-x-lg");
+                navButton.find("i").toggleClass("bi-list");
+            };
+        });
+    });
+</script>

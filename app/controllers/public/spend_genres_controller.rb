@@ -1,22 +1,26 @@
 class Public::SpendGenresController < ApplicationController
     def new
         @genre=SpendGenre.new
-        @genres=SpendGenre.all
+        @genres=current_user.spend_genres.all
     end
 
     def index
-        @genres=SpendGenre.all
+        @genres=current_user.spend_genres.all
     end
 
     def create
         @genre=SpendGenre.new(spend_genre_params)
         @genre.user_id=current_user.id
-        cnt=SpendGenre.all
+        cnt=current_user.spend_genres.all
         if cnt.count<=10 and @genre.save
             redirect_to spend_genres_path
         else
             @genres=SpendGenre.all
-            flash.now[:warning]="ジャンル名を入力してください"
+            if cnt.count > 14
+                flash.now[:warning]="これ以上ジャンルを追加することはできません。"
+            else
+                flash.now[:warning]="ジャンル名を入力してください"
+            end
             render :new
         end
     end
