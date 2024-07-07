@@ -16,7 +16,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   #新規登録後、支出項目を自動作成
   def create_spendGenre
-    if current_user.nil? || current_user.spend_genres.count >7
+    if current_user.nil? || current_user.spend_genres.count >=7
       return 
     else
       SpendGenre.create!([
@@ -69,7 +69,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
     return if !@customer
     ## 取得したアカウントのパスワードと入力されたパスワードが一致してるかを判別
     if @customer.valid_password?(params[:user][:password]) && @customer.is_unsubscribed
-      redirect_to new_customer_registration_path 
+      redirect_to new_user_registration_path 
     end
   end
 

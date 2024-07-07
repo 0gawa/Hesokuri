@@ -10,6 +10,7 @@ class Public::SpendsController < ApplicationController
             @spend.comment="No Comment" #ここでデフォルトコメントを修正できる
         end
         is_ok=true
+        flash.now[:warning]="支出額は必ず入力してください"
         if @spend.money.nil?
             flash.now[:warning]="支出額を入力してください"
             is_ok=false
@@ -24,7 +25,6 @@ class Public::SpendsController < ApplicationController
             current_user.save
             redirect_to spends_path
         else
-            flash.now[:warning]="支出額は必ず入力してください"
             render :new
         end
     end

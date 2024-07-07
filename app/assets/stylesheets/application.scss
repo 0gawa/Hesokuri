@@ -7,17 +7,21 @@ $dark: #494b4b;
 $light-yellow: #f1f614; //headerで使用
 $line-green: #06C755;
 
-@import "bootstrap";
+@import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
-@import 'custom';
 @import 'homes';
+@import 'pheader';
 
 * { font-family: "Noto Sans JP", sans-serif; }
 a {text-decoration: none;}
 .bg-header{background-color: $light-yellow;}
+.bg-body-black{background-color: black;}
 .bg-radius-10{border-radius: 10px;}
 .bg-circle{border-radius: 10px; padding: 20px 0px;}
 .display-inline{display: inline;}
+
+//font-color
+.text-black{color: black;}
 
 //toppage-css
 .bg-pic-com{
@@ -56,10 +60,12 @@ a {text-decoration: none;}
 .fs-50px{font-size: 50px;}
 .fs-60px{font-size: 60px;}
 
-//size
+//----size-----
+//----width----
 .w-66{width: 66%;}
 .w-33{width: 33%;}
 
+//----height----
 .h-200{height: 200px;}
 .h-250{height: 250px;}
 .h-300{height: 300px;}
@@ -88,3 +94,6 @@ a {text-decoration: none;}
 
 //image
 .bg-po-right{background-position: right;}
+
+//ul
+.no-style-li{list-style:none;}

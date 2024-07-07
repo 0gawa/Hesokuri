@@ -1,0 +1,41 @@
+$dark: #0b0b0b;
+$info: #ebebeb;
+
+.nav-ph{
+    //幅350pxのサイドバーの左側を-350pxにして隠す
+    width: 350px;
+    height: 100vh;
+    top: 0;
+    left: -350px;
+    position: fixed;
+	background-color: $info;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-ph ul{
+    margin: 0;
+    padding: 0;
+    top: 50px;
+    left: 114px;
+    position: absolute;
+}
+
+.nav-ph li{
+	margin: 20px auto;
+    list-style: none;
+}
+
+.nav-ph li a{
+	color: $dark;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+.button-nav-z{
+    z-index: 999;
+}
