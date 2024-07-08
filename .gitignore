@@ -37,4 +37,3 @@
 /.env
 
 /app/views/public/homes/organization.html.erb
-/db/seeds.rb

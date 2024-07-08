@@ -1,4 +1,4 @@
-<header class="mb-5 bg-header">
+<header class="mb-5 bg-header d-flex">
     <span class="d-flex">
         <% if user_signed_in? %>
             <span class="pe-3 btn fs-2 button-nav-z" id="button-nav"><i class="bi bi-list"></i></span>
@@ -15,6 +15,36 @@
                 <% end %>
             <%end%>
         </span>
+    </span>
+    <span class="d-flex flex-row-reverse container-fluid py-2">
+        <%if !user_signed_in?%>
+        <ul class="mb-0">
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "トップ", root_path, class: 'text-black lh-50' %>
+            </li>
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "Hesokuriとは", about_path, class: 'text-black lh-50' %>
+            </li>
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "新規登録", new_user_registration_path, class: 'text-black lh-50' %>
+            </li>
+            <li class="no-style-li d-inline">
+                <%= link_to "ログイン", new_user_session_path, class: 'text-black lh-50' %>
+            </li>
+        </ul>
+        <%else%>
+        <ul class="mb-0" style="height: 50px;">
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "マイページ", mypage_path, class: 'text-black lh-50' %>
+            </li>
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "収入の入力", new_income_path, class: 'text-black lh-50' %>
+            </li>
+            <li class="no-style-li d-inline pe-3">
+                <%= link_to "支出の入力", new_spend_path, class: 'text-black lh-50' %>
+            </li>
+        </ul>
+        <%end%>
     </span>
 </header>
 
@@ -33,6 +63,18 @@
             </li>
             <li>
                 <%=link_to "目標金額の設定・編集", set_money_path, class: ''%>
+            </li>
+            <li>
+                <%=link_to "収入の一覧", incomes_path%>
+            </li>
+            <li>
+                <%=link_to "支出の一覧", spends_path%>
+            </li>
+            <li>
+                <%=link_to "ユーザー情報の編集", edit_user_path%>
+            </li>
+            <li>
+                <%=link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </li>
         <% else %>
             <li class="">
