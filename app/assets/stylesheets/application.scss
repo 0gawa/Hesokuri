@@ -13,12 +13,23 @@ $line-green: #06C755;
 @import 'pheader';
 
 * { font-family: "Noto Sans JP", sans-serif; }
-a {text-decoration: none;}
+html {font-size: 62.5%;}
+ol, ul {list-style: none;}
+a {
+    text-decoration: none;
+    margin:0;
+    padding:0;
+}
+footer{
+    padding: 30px;
+    color: $light
+}
+//----------------上記は全体に関わるリセットCSS---------------------//
 .bg-header{background-color: $light-yellow;}
 .bg-body-black{background-color: black;}
 .bg-radius-10{border-radius: 10px;}
 .bg-circle{border-radius: 10px; padding: 20px 0px;}
-.display-inline{display: inline;}
+
 
 //font-color
 .text-black{color: black;}
@@ -48,8 +59,6 @@ a {text-decoration: none;}
     .fs-lg-60px{font-size: 60px;}
 }
 
-.of-cover{object-fit: cover;}
-
 //background-color
 .bg-trans-black{background-color: #111111a1;}
 .bg-trans-light{background-color: #ffffff85;}
@@ -75,10 +84,12 @@ a {text-decoration: none;}
 .h-600{height: 600px;}
 .h-700{height: 700px;}
 
+.h-vh-100{height: 100vh;}
+.h-vh-80{height: 80vh;}
+
 @media screen and (min-width: 720px) {
     .h-md-600{height: 600px;}
     .h-md-500{height: 500px;}
-
 }
 @media screen and (min-width: 992px) {
     .h-lg-200{height: 200px;}
@@ -92,9 +103,3 @@ a {text-decoration: none;}
 //line-height
 .lh-50{line-height: 50px;}
 .lh-500{line-height: 500px;}
-
-//image
-.bg-po-right{background-position: right;}
-
-//ul
-.no-style-li{list-style:none;}

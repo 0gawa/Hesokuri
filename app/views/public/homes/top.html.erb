@@ -1,118 +1,107 @@
 <%=render 'layouts/public'%>
-
-<div class="w-100 ps-md-5 bg-pic-com justify-content-center" id="top-bg-first">
-    <div class="container">
-    <div class="row h-500 pt-md-5">
-        <div class="col-md-2"></div>
-        <div class="col-10 pt-5">
-            <h1 class="ps-md-4 pt-md-5 top-title-80 fs-60px text-light bg-radius-10" id="title-slow">貯金を<br>もっと簡単に</h1>
-            <p class="pt-1 text-light ps-md-4">(App名)を使って、貯金を簡単に楽しく管理しましょう。</p>
-
-            <%=link_to "詳しくはこちら", about_path, class: "btn btn-light ms-md-4 pt-1"%>
-        </div>
-    </div>
+    
+<div class="w-100 h-vh-80 bg-pic-com d-flex justify-content-center" id="top-bg-first">
+    <div class="p-3">
+        <h1 class="big-topTitle" id="title-slow">貯金をもっと簡単に</h1>
+        <p class="pt-1 text-light">(App名)を使って、貯金を簡単に楽しく管理しましょう。</p>
+        <%=link_to "詳しくはこちら", about_path, class: "btn btn-light ms-md-4 pt-1"%>
     </div>
 </div>
 
-<div class="container mt-5 h-700 h-md-600">
-    <div class="row mt-md-5">
-        <h1 class="text-center pt-md-2 text-light">お金の浪費を今すぐに減らせる<br>貯金が簡単にできる<br>そんなアプリを今すぐ試してみませんか？</h1>
-    </div>
-    <div class="row mb-md-5 justify-content-center">
-        <div class="col-md-3 me-2 mt-md-0 mt-2 mt-md-5">
-            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
-            <h3 class="text-center text-light pt-3">日常の浪費を簡単に管理</h3>
-            <p class="text-center text-light  pt-2">hogehogehogehogehoge</p>
-        </div>
-        <div class="col-md-3 me-2 mt-md-0 mt-3 mt-md-5">
-            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
-            <h3 class="text-center text-light pt-3">貯金と支出の一括管理</h3>
-            <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
-        </div>
-        <div class="col-md-3 mt-md-0 mt-3 mt-md-5">
-            <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
-            <h3 class="text-center text-light  pt-3">家計簿アプリだと継続ができない</h3>
-            <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
+<div class="w-100 h-vh-100 d-flex justify-content-center">
+    <div class="p-3">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <h1 class="text-center text-light">お金の浪費を今すぐに減らせる<br>貯金が簡単にできる<br>そんなアプリを今すぐ試してみませんか？</h1>
+                <div class="col-md-3 me-2 mt-md-0 mt-2 mt-md-5">
+                    <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+                    <h3 class="text-center text-light pt-3">日常の浪費を簡単に管理</h3>
+                    <p class="text-center text-light  pt-2">hogehogehogehogehoge</p>
+                </div>
+                <div class="col-md-3 me-2 mt-md-0 mt-3 mt-md-5">
+                    <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+                    <h3 class="text-center text-light pt-3">貯金と支出の一括管理</h3>
+                    <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
+                </div>
+                <div class="col-md-3 mt-md-0 mt-3 mt-md-5">
+                    <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
+                    <h3 class="text-center text-light  pt-3">家計簿アプリだと継続ができない</h3>
+                    <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="w-100 bg-header mt-md-0 mt-5 pb-5 h-md-500 h-lg-500">
+<div class="w-100 h-vh-80">
     <div class="container">
-    <div class="row justify-content-center pt-md-5">
-        <div class="col-md-6 mt-3 mt-md-0">
-        <%=image_tag 'iphone12.jpg', class: "w-100 bg-po-right h-100 of-cover"%>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6 mt-5 mt-md-0">
+            <%=image_tag 'iphone12.jpg', class: "top-picSize"%>
         </div>
-        <div class="col-md-6 mt-md-0 mt-3 pt-lg-5">
-            <h3 class="text-center pt-lg-5 js-fade fs-40px fs-lg-60px">今を大切に</h3>
+        <div class="col-md-6 mt-md-0 mt-3 text-light">
+            <h3 class="text-center pt-lg-5 fs-40px fs-lg-60px">今を大切に</h3>
             <p class="text-center fs-5 pt-3">１つのアプリで<br>数分間を貴重な一瞬へ</p>
         </div>
-    </div>
+    </div>        
     </div>
 </div>
 
+<div class="w-100 bg-pic-ai-office h-vh-100">
+    <div class="w-100 h-100 py-3 bg-trans-black">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <h3 class="text-light text-center">アプリの特徴</h3>
+                <p class="text-light pt-1 text-center">手頃なアプリの独自の機能や使い方、競合サービスとの比較</p>
 
-<div class="w-100">
-    <div class="container mt-5">
-    <div class="row text-center pt-3">
-        <h3 class="text-light js-fade">アプリの特徴</h3>
-        <p class="text-light pt-1 js-fade">手頃なアプリの独自の機能や使い方、競合サービスとの比較</p>
-    </div>
-    </div>
-
-    <div class="bg-pic-ai-office h-lg-500">
-        <div class="h-lg-500 pt-lg-4 bg-trans-black">
-        <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-3 me-md-2 mt-3">
-                <h3 class="text-light text-center">機能</h3>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>
-            </div>
-            <div class="col-md-3 me-md-2 mt-md-3">
-                <h3 class="text-light text-center">使い方</h3>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>
-            </div>
-            <div class="col-md-3 me-md-2 mt-md-3">
-                <h3 class="text-light text-center">競合サービス</h3>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <p class="text-center text-light">hoge</p>
-                <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>   
-            </div>
-        </div>
-        </div>
+                <div class="col-md-3 me-md-2 mt-3">
+                    <h3 class="text-light text-center">機能</h3>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <span class=" pt-3 pb-3"><%=link_to "詳しく", about_path, class: "btn btn-light col-10 offset-1"%></span>
+                </div>
+                <div class="col-md-3 me-md-2 mt-md-3">
+                    <h3 class="text-light text-center">使い方</h3>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <span class=" pt-3 pb-3"><%=link_to "詳しく", about_path, class: "btn btn-light col-10 offset-1"%></span>
+                </div>
+                <div class="col-md-3 me-md-2 mt-md-3">
+                    <h3 class="text-light text-center">競合サービス</h3>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <p class="text-center text-light">hoge</p>
+                    <span class=" pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-10 offset-1"%></span>   
+                </div>
+            </div>        
         </div>
     </div>
 </div>
 
-<div class="w-100 mt-md-0 mt-5 pb-5">
+<div class="w-100 h-vh-80">
     <div class="container">
-    <div class="row h-300 h-md-500 h-lg-500 justify-content-center pt-md-5">
+    <div class="row d-flex justify-content-center">
         <div class="text-center col-md-6 mt-3 mt-md-0">
-        <%=image_tag 'keiba.jpg', class: "w-100 bg-po-right h-100 of-cover"%>
+            <%=image_tag 'keiba.jpg', class: "top-picSize"%>
         </div>
         <div class="col-md-6 mt-md-0 mt-3 pt-lg-5">
             <h3 class="text-center text-light pt-lg-5 fs-40px fs-lg-60px">1円1円を大切に</h3>
             <p class="text-center text-light  fs-5 pt-3">貯金で人生を豊かに</p>
-            <span class="row pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 mx-auto"%></span>
+            <span class=" pt-3 pb-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 offset-3"%></span>
         </div>
-    </div>
+    </div>        
     </div>
 </div>
 
-<div class="w-100 mt-md-0 bg-header pb-5 mt-5">
+<div class="w-100 h-vh-80">
     <div class="container">
-    <div class="row h-300 h-md-500 h-lg-500 justify-content-center pt-md-5">
-        <div class="text-center col-md-6 mt-3 mt-md-0">
-        <%=image_tag 'keiba.jpg', class: "w-100 bg-po-right h-100 of-cover"%>
+    <div class="row d-flex justify-content-center">
+        <div class="text-center col-md-6">
+            <%=image_tag 'keiba.jpg', class: "top-picSize"%>
         </div>
-        <div class="col-md-6 mt-md-0 pt-lg-5 mt-3">
+        <div class="col-md-6 mt-md-0 text-light">
             <h3 class="text-center pt-lg-5">お問い合わせに関して</h3>
             <p class="text-center pt-3">時間帯によってはすぐに対応できない場合がございます。</p>
             <div class="mt-3 text-center">
@@ -124,10 +113,9 @@
                 <span class="ps-3 fs-4"><i class="bi bi-instagram"></i></span>
             </div>
         </div>
-    </div>
+    </div>        
     </div>
 </div>
-
 
 <script>
 $(function(){

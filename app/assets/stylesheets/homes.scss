@@ -1,28 +1,22 @@
 $light-yellow: #f1f614;
 
-.border-radius-300 {
-    width: 300px;
-    height: 300px;
-    line-height: 300px;
-    background-color: $light-yellow;
-    border-radius: 50%;
-    color: rgb(0, 0, 0);
+.big-topTilte{
+    font-size: 6.8rem;
     text-align: center;
+    color: #FFF;
+    margin-top: 40%;
 }
 
-@media screen and (min-width: 720px) {
-    .top-title-80{line-height: 80px;}
+.top-picSize{
+    width: 100%;
+    height: 30vh;
+    background-position: right;
+    object-fit: cover;
 }
 
-//animation
-.js-fade {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(50px);
-    transition: opacity 2s,visibility 2s, transform 2s;
-}
-.inview {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0px);
+@media screen and (max-width: 720px) {
+    .top-picSize{
+        width: 100%;
+        height: 40vh;
+    }
 }

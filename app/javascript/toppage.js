@@ -12,9 +12,3 @@ $(function(){
     
     $("#title-slow").hide().fadeIn(1500)
 });
-//animation
-$(function () {
-    $(".js-fade").on("inview", function () {
-        $(this).addClass("inview");
-    });
-});
