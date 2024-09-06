@@ -1,29 +1,27 @@
 <%= render "layouts/public"%>
 
 <div class="container">
-    <div class="row bg-light justify-content-center bg-circle">
-        <div class="col-lg-10 mx-lg-0 mx-1">
-            <h1 class="text-center pt-3">退会の確認</h1>
+    <div class="row bg-light d-flex justify-content-center bg-circle">
+        
+        <div class="col-12 col-md-10 py-5">
+            <h1 class="text-center">退会の確認</h1>
 
-            <div clas="row mt-5">
-                <h3 class="text-center">退会について</h3>
-                <p class="pt-3">
-                退会手続きをされますと、当アプリのサービスがご利用できなくなります。
-                退会後、同じアカウントで再度ご利用される場合は、アカウント復旧のお手続きが必要になります。なおアカウント復旧は、退会手続き完了後30日以内となっています。
-                退会手続き完了から31日経過後、そのアカウントに関する全てのデータが削除されます。その際に発生するあらゆる損失について、当アプリ責任者は責任を負いかねます。
-                </p>
-                <p class="pt-3">
-                下記ボタンをクリックすることで退会が可能です。<br>
-                退会操作の取り消しは、いかなる場合でも出来ません。注意した上での操作をお願いいたします。
-                </p>
-            </div>
+            <h3 class="text-center mt-5">退会について</h3>
+            <p class="pt-3">
+            退会手続きをされますと、当アプリのサービスがご利用できなくなります。
+            退会後、同じアカウントで再度ご利用される場合は、アカウント復旧のお手続きが必要になります。なおアカウント復旧は、退会手続き完了後30日以内となっています。
+            退会手続き完了から31日経過後、そのアカウントに関する全てのデータが削除されます。その際に発生するあらゆる損失について、当アプリ責任者は責任を負いかねます。
+            </p>
+            <p class="pt-3">
+            下記ボタンをクリックすることで退会が可能です。<br>
+            退会操作の取り消しは、いかなる場合でも出来ません。注意した上での操作をお願いいたします。
+            </p>
 
-            <div class="row mt-5 mb-2">
-                <div class="text-center">
-                    <%= link_to "退会する", withdrawal_path, method: :patch, data: {confirm: "本当に退会しますか？。この操作は取り消せません。" }, class: "btn btn-danger col-5" %>
-                </div>
+            <div class="text-center">
+                <%= link_to "退会する", withdrawal_path, method: :patch, data: {confirm: "本当に退会しますか？。この操作は取り消せません。" }, class: "btn btn-danger col-6" %>
             </div>
         
         </div>
+        
     </div>
 </div>

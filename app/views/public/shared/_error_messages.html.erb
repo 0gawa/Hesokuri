@@ -1,17 +1,15 @@
 <% if resource.errors.any? %>
-  <div class="row my-3">
-    <div id="error_explanation" data-turbo-cache="false" class="col-10 offset-1 p-2 bg-danger bg-radius-10">
-      <h5 class="ps-2">
-        <%= I18n.t("errors.messages.not_saved",
-                  count: resource.errors.count,
-                  resource: resource.class.model_name.human.downcase)
-        %>
-      </h5>
-      <ul>
-        <% resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div id="error_explanation" data-turbo-cache="false" class="col-10 offset-1 p-2 bg-danger bg-radius-10">
+    <h5>
+      <%= I18n.t("errors.messages.not_saved",
+                count: resource.errors.count,
+                resource: resource.class.model_name.human.downcase)
+      %>
+    </h5>
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>

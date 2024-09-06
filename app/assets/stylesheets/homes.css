@@ -1,15 +1,18 @@
-$light-yellow: #f1f614;
+.big-mt-space{
+    margin-top: 25%;
+}
+.big-pt-space{
+    padding-top: 25%;
+}
 
 .big-topTilte{
     font-size: 6.8rem;
     text-align: center;
     color: #FFF;
-    margin-top: 40%;
 }
 
 .top-picSize{
     width: 100%;
-    height: 30vh;
     background-position: right;
     object-fit: cover;
 }
@@ -17,6 +20,11 @@ $light-yellow: #f1f614;
 @media screen and (max-width: 720px) {
     .top-picSize{
         width: 100%;
-        height: 40vh;
+    }
+    .big-mt-space{
+        margin-top: 20%;
+    }
+    .big-pt-space{
+        padding-top: 20%;
     }
 }

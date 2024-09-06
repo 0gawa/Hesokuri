@@ -16,7 +16,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   #新規登録後、支出項目を自動作成
   def create_spendGenre
-    if current_user.nil? || current_user.spend_genres.count >=7
+    @limit_number = 7
+    if current_user.nil? || current_user.spend_genres.count >= @limit_number
       return 
     else
       SpendGenre.create!([

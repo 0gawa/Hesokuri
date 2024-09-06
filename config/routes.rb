@@ -27,6 +27,5 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'dashboards', to: 'dashboards#index', as: "dashboards"
   end
- 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
 end
