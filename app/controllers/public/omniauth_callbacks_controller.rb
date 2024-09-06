@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def line
     basic_action

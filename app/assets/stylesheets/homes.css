@@ -1,0 +1,30 @@
+.big-mt-space{
+    margin-top: 25%;
+}
+.big-pt-space{
+    padding-top: 25%;
+}
+
+.big-topTilte{
+    font-size: 6.8rem;
+    text-align: center;
+    color: #FFF;
+}
+
+.top-picSize{
+    width: 100%;
+    background-position: right;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 720px) {
+    .top-picSize{
+        width: 100%;
+    }
+    .big-mt-space{
+        margin-top: 20%;
+    }
+    .big-pt-space{
+        padding-top: 20%;
+    }
+}

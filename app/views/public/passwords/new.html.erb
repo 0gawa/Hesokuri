@@ -1,23 +1,28 @@
 <%=render 'layouts/public'%>
+
 <div class="container">
-<div class="row justify-content-center bg-light bg-circle">
-    <div class="col-lg-10 mx-lg-0 mx-1">
+<div class="row justify-content-center">
+
+    <div class="col-11 col-md-5 mt-5 py-5 bg-light bg-circle">
       <h1 class="text-center">パスワードの再設定</h1>
 
-      <%= form_with model: @user, url: user_password_path, local: true do |f| %>
+      <%= form_with model: @user, url: user_password_path, class:"row justify-content-center" do |f| %>
         <%= render "public/shared/error_messages", resource: resource %>
 
-        <div class="field mb-4 col-10 offset-1">
-          <%= f.label "登録済みのメールアドレス", class: "pb-2 ps-2" %><br />
+        <div class="field mt-4 col-10">
+          <%= f.label "登録済みのメールアドレス", class: "pb-1" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
 
-        <div class="actions mb-4 text-center">
-          <%= f.submit "パスワード再設定用リンクを送信する", class: "btn btn-success col-5" %>
+        <div class="actions mt-4 text-center">
+          <%= f.submit "パスワード再設定用リンクを送信する", class: "btn btn-success col-10" %>
+        </div>
+
+        <div class="mt-5 col-10">
+          <%= render "public/shared/links" %>
         </div>
       <% end %>
 
-      <%= render "public/shared/links" %>
     </div>
 </div>
 </div>
