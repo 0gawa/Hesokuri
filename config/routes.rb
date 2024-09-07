@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  # 管理者用
+  # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :password], controllers: {
     sessions: 'admin/sessions'
   }
 
+  # 顧客用
+  # URL /users/sign_in ...
+  devise_for :users, controllers: {
+    registrations: "public/registrations",
+    confirmations: "public/confirmations",
+    sessions: 'public/sessions',
+    passwords: 'public/passwords',
+    omniauth_callbacks: 'public/omniauth_callbacks'
+  }
+  
   scope module: :public do
-    devise_for :users
     root to: 'homes#top'
     get 'homes/about', to: 'homes#about', as: "about"
     get 'homes/privacy', to: 'homes#privacy', as: 'privacy'

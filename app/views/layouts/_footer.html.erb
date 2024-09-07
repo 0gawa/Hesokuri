@@ -4,9 +4,9 @@
       <div class="col-md-4">
         <p class="mb-1">貯金で余裕のあるくらしを</p>
           <%= image_tag 'rec_logo.jpg', :size =>'240x60' %>
-        <p class="mt-1">© HESOKURI</p>
+        <p class="mt-1">© Peculiss</p>
       </div>
-      <div class="col-md-2 mt-md-0 mt-2">
+      <div class="col-md-2 mt-md-0">
       </div>
       <div class="col-md-3 mt-md-0 mt-3"> 
         <h6 class="mb-3">Support</h6>
@@ -19,15 +19,20 @@
       <div class="col-md-3 mt-md-0 mt-3">
         <h6 class="mb-3">Information</h6>
         <ul class="p-0">
-          <li>
+          <!-- <li>
             <a href="<%=organization_path%>" title="About" class="text-light">組織について</a>
-          </li>
-          <li class="pt-2">
+          </li> -->
+          <li class="pt-0">
             <a href="<%=terms_of_use_path%>" title="Terms-of-Use" class="text-light">利用規約</a>
           </li>
           <li class="pt-2">
             <a href="<%=privacy_path%>" title="informations" class="text-light">プライバシーポリシー</a>
           </li>
+          <% if user_signed_in? %>
+            <li class="pt-2">
+              <%= link_to "ログアウト", destroy_user_session_path, data: {method: :delete, confirm: "ログアウトしますか？" }, class: 'text-light'%>
+            </li>
+          <% end %>
           <li class="pt-2">
             <%=link_to "退会はこちらから", confirm_unsubscribed_path, class: "text-light"%>
           </li>

@@ -1,28 +1,31 @@
 <%=render 'layouts/public'%>
 <div class="container">
-<div class="row justify-content-center bg-light bg-circle">
-    <div class="col-lg-10 mx-lg-0 mx-1">
+<div class="row justify-content-center">
+
+    <div class="col-11 col-md-5 py-5 mt-5 bg-light bg-circle">
       <h1 class="text-center">パスワードの再設定</h1>
 
-      <%= form_with model: @user, url: user_password_path, local: true do |f| %>
-        <%= render "public/shared/error_messages", resource: resource %>
-        <%= f.hidden_field :reset_password_token %>
+      <%= render "public/shared/error_messages", resource: resource %>
+      <%= form_with model: @user, url: user_password_path, class:"row justify-content-center" do |f| %>
+        <% if user_signed_in? %>
+          <%= f.hidden_field :reset_password_token %>
+        <% end %>
 
-        <div class="field mb-4 col-10 offset-1">
-          <%= f.label :password, "新しいパスワード", class: "pb-2 ps-2" %><br />
+        <div class="field mb-4 col-10">
+          <%= f.label :password, "新しいパスワード", class: "pb-1" %><br />
           <% if @minimum_password_length %>
             <em><%= @minimum_password_length %>6文字以上)</em><br />
           <% end %>
           <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control"  %>
         </div>
 
-        <div class="field mb-4 col-10 offset-1">
-          <%= f.label :password_confirmation, "新しいパスワード（確認用）", class: "pb-2 ps-2" %><br />
+        <div class="field mb-4 col-10">
+          <%= f.label :password_confirmation, "新しいパスワード（確認用）", class: "pb-1" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"  %>
         </div>
 
         <div class="actions mb-4 text-center">
-          <%= f.submit "パスワードを変更する", class: "btn btn-success col-5"  %>
+          <%= f.submit "パスワードを変更する", class: "btn btn-success col-10"  %>
         </div>
       <% end %>
 

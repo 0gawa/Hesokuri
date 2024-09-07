@@ -10,7 +10,6 @@ $line-green: #06C755;
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import "homes";
-@import "pheader";
 
 * { font-family: "Noto Sans JP", sans-serif; }
 ol, ul {list-style: none;}
@@ -34,7 +33,14 @@ footer{
 }
 //----------------上記は全体に関わるリセットCSS---------------------//
 
-.bg-header{background-color: $light-yellow;}
+.bg-header{
+    background-color: $light-yellow;
+    margin-bottom: $spacer * 3;
+}
+.bg-admin-header{
+    background-color: $dark;
+    margin-bottom: $spacer * 3;
+}
 .bg-body-black{background-color: black;}
 .bg-radius-10{border-radius: 10px;}
 .bg-circle{border-radius: 10px; padding: 20px 0px;}
@@ -64,8 +70,16 @@ footer{
     background-image: image-url('ai_office.jpg');background-repeat: no-repeat;
     background-size: cover;background-position: center;
 }
+
 @media screen and (min-width: 992px) {
     .fs-lg-60px{font-size: 60px;}
+}
+
+@media screen and (max-width: 992px) {
+    /*------headerのnav-itemで使用--------*/
+    .nav-link-space{
+        padding: $spacer 0 $spacer $spacer*1.5;
+    }
 }
 
 //background-color
