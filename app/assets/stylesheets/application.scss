@@ -98,6 +98,7 @@ footer{
 .w-33{width: 33%;}
 
 //----height----
+.h-150{height: 150px;}
 .h-200{height: 200px;}
 .h-250{height: 250px;}
 .h-300{height: 300px;}
@@ -109,11 +110,24 @@ footer{
 
 .h-vh-100{height: 100vh;}
 .h-vh-80{height: 80vh;}
+.h-vh-50{height: 50vh;}
+.h-vh-30{height: 30vh;}
 
+/*---------- md <= width -----------------*/
 @media screen and (min-width: 720px) {
-    .h-md-600{height: 600px;}
+    .h-vh-md-50{height: 50vh;}
+    .h-md-150{height: 150px;}
+    .h-md-200{height: 200px;}
+    .h-md-250{height: 250px;}
+    .h-md-300{height: 300px;}
+    .h-md-350{height: 350px;}
+    .h-md-400{height: 400px;}
     .h-md-500{height: 500px;}
+    .h-md-600{height: 600px;}
+    .h-md-700{height: 700px;}
 }
+
+/*---------- lg <= width -----------------*/
 @media screen and (min-width: 992px) {
     .h-lg-200{height: 200px;}
     .h-lg-300{height: 300px;}
@@ -125,4 +139,3 @@ footer{
 
 //line-height
 .lh-50{line-height: 50px;}
-.lh-500{line-height: 500px;}
