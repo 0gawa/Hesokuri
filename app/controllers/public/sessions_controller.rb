@@ -45,7 +45,7 @@ class Public::SessionsController < Devise::SessionsController
         redirect_to new_user_session_path
       elsif !@user.valid_password?(params[:user][:password])
         flash[:notice] = "パスワードが間違えています"
-      elsif !@user.valid_name?(params[:user][:password])
+      elsif params[:user][:name] != @user.name
         flash[:notice] = "名前が間違えています"
       end
     else

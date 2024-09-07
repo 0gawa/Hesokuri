@@ -1,4 +1,4 @@
-<header class="mb-5 bg-header">
+<header class="bg-header">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <!--ブランドロゴ長方形-->
@@ -15,30 +15,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
                 <%if !user_signed_in?%>
                     <li class="nav-item">
-                        <%= link_to "トップ", root_path, class: 'text-black nav-link' %>
+                        <%= link_to "トップ", root_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Hesokuriとは", about_path, class: 'text-black nav-link' %>
+                        <%= link_to "Hesokuriとは", about_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "新規登録", new_user_registration_path, class: 'text-black nav-link' %>
+                        <%= link_to "新規登録", new_user_registration_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "ログイン", new_user_session_path, class: 'text-black nav-link' %>
+                        <%= link_to "ログイン", new_user_session_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                 <%else%>
                     <li class="nav-item">
-                        <%= link_to "マイページ", mypage_path, class: 'text-black nav-link' %>
+                        <%= link_to "マイページ", mypage_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "収入の入力", new_income_path, class: 'text-black nav-link' %>
+                        <%= link_to "収入の入力", new_income_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "支出の入力", new_spend_path, class: 'text-black nav-link' %>
+                        <%= link_to "支出の入力", new_spend_path, class: 'text-black nav-link nav-link-space' %>
                     </li>
                 <%end%>
                 </ul>

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   after_action :create_spendGenre, only: [:create]
