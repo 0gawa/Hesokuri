@@ -63,7 +63,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem "devise"
-  gem 'bootstrap', '~> 5.3.0'
+  gem 'bootstrap', '~> 5.3.3'
   gem 'jquery-rails'
   gem 'rails-i18n'
   gem 'enum_help'

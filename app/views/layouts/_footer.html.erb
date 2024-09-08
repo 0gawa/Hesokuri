@@ -30,7 +30,7 @@
           </li>
           <% if user_signed_in? %>
             <li class="pt-2">
-              <%= link_to "ログアウト", destroy_user_session_path, data: {method: :delete, confirm: "ログアウトしますか？" }, class: 'text-light'%>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？" }, class: 'text-light'%>
             </li>
           <% end %>
           <li class="pt-2">
