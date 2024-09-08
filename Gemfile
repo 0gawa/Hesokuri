@@ -62,20 +62,29 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "devise"
-  gem 'bootstrap', '~> 5.3.3'
-  gem 'jquery-rails'
-  gem 'rails-i18n'
-  gem 'enum_help'
-  #gem 'mini_magick'
-  gem 'kaminari'
-  #円グラフ作成用
-  gem 'chartkick' 
-  # LINEログインを可能にするgem
-  gem 'omniauth-line'
-  gem 'omniauth-rails_csrf_protection'
-  gem 'dotenv-rails'
-  gem 'line-bot-api'
-
 end
+
+group :production do
+  gem 'mysql2'
+end
+
+gem "devise"
+gem 'bootstrap', '~> 5.3.3'
+gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'enum_help'
+gem 'kaminari'
+
+#円グラフ作成用
+gem 'chartkick' 
+
+# LINEログインを可能にするgem
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
+gem 'dotenv-rails'
+gem 'line-bot-api'
+
+gem "net-smtp"
+gem "net-pop"
+gem "net-imap"
 
