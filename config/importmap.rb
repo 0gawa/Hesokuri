@@ -8,3 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js"
 pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.3/dist/jquery.js"
+pin "jquery.inview.min.js"
+pin "toppage.js"
