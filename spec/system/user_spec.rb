@@ -15,7 +15,22 @@ RSpec.describe "Users", type: :model do
   #   end
   # end
 
-  describe "バリデーションチェック" do
-    
+  describe "ユーザーのバリデーションチェック" do
+    context "名前に対して" do
+      let(:user) { create(:user) }
+      let(:other_user) { create(:user) }
+
+      it "nameがnil"  do
+        user.name = nil
+        expect(user).to be_invalid
+      end
+
+      it "名前の文字数"  do
+        user.name = "aaaaaaaaaaaaaaaaaaaaaa"
+        expect(user).to be_invalid
+      end
+
+    end
   end
+
 end

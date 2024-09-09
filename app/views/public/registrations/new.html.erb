@@ -64,7 +64,10 @@
         </div>
 
         <div class="mt-5 col-10">
-          <p class="mb-5 text-center">アカウントを作成すると、<%=link_to "利用規約", terms_of_use_path%>および<%=link_to "プライバシーポリシー", privacy_path%>
+          <% if flash[:notice]%>
+            <p class="text-center mb-2 text-danger"><%= flash[:notice] %></p>
+          <%end%>
+          <p class="mb-4">アカウントを作成すると、<%=link_to "利用規約", terms_of_use_path%>および<%=link_to "プライバシーポリシー", privacy_path%>
           に同意するものとします。</p>
           <%= render "public/shared/links" %>
         </div>
