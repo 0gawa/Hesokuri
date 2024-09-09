@@ -5,9 +5,12 @@
 //= require bootstrap
 //= require chartkick
 //= require Chart.bundle
-import "controllers"
-import jquery from "jquery"
-window.$ = jquery
+import "controllers";
+import "public/toppage";
+import "public/jquery.inview.min";
+// import "public"
+import jquery from "jquery";
+window.$ = jquery;
 
 $(function() {
   console.log("Hello Rails7!");
