@@ -1,5 +1,5 @@
 class Public::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, :is_correct_user, only: [:create]
   after_action :create_spendGenre, only: [:create]
 
   # GET /resource/sign_up
@@ -56,6 +56,36 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  def is_correct_user
+    if self.is_filled_form
+      user = User.find_by(email: params[:user][:email])
+      if user.present?
+        flash[:notice] = "そのアカウントはすでに存在しています" and return
+      end
+      if params[:user][:password].length>=6 && params[:user][:password].length <= 128
+        if params[:user][:password] === params[:user][:password_confirmation]
+          #名前の確認へ進む
+        else
+          flash[:notice] = "確認用と一致しません" and return
+        end
+      else
+        flash[:notice] = "パスワードは6文字以上128文字以下である必要があります。" and return
+      end
+    else
+      flash[:notice] = "すべてに入力する必要があります" and return
+    end
+
+    #追加のパラメーター(devise非搭載)に関するflashメッセージ
+    if !valid_name?(params[:user][:name])
+      flash[:notice] = "名前は2文字以上20字以下にする必要があります" and return
+    end
+  end
+
+  def valid_name?(name)
+    name.length >= 2 && name.length <= 20
+  end
+
+
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :sex, :job, :age, :is_smoker])
@@ -72,14 +102,25 @@ class Public::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def after_sign_up_path_for(resource)
+    mypage_path
+  end
+
+  def is_filled_form
+    is_ok = true
+    if !(params[:user][:email].present? && params[:user][:name].present? && params[:user][:password].present? && params[:user][:password_confirmation].present?)
+      is_ok = false
+    end
+    if !(params[:user][:sex].present? && params[:user][:job].present? && params[:user][:age].present? && params[:user][:is_smoker].present?)
+      is_ok = false
+    end
+    return is_ok
+  end
+
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
-
-  def after_sign_up_path_for(resource)
-    mypage_path
-  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

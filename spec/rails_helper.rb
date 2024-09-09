@@ -58,8 +58,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   
 
-  config.includeFactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :request 
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::IntegrationHelpers, type: :request
-  config.extend ControllerMacros, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include FactoryBot::Syntax::Methods
+  config.include Capybara::DSL
 end
