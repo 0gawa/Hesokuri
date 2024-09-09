@@ -8,8 +8,8 @@
 import "controllers"
 import jquery from "jquery"
 window.$ = jquery
-import "./jquery.inview.min.js"
-import "./toppage.js"
+import "./javascript/jquery.inview.min.js"
+import "./javascript/toppage.js"
 
 $(function() {
   console.log("Hello Rails7!");
