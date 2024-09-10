@@ -3,7 +3,7 @@
 <div class="container">
 <div class="row d-flex justify-content-center">
 
-    <div class="col-12 col-md-10 mt-5 bg-light bg-circle py-5">
+    <div class="col-11 col-md-10 bg-light bg-circle py-5">
         <h1 class="text-center">目標金額を設定する</h1>
 
         <div class="row mt-5 justify-content-center">
@@ -53,41 +53,41 @@
                         <%= f.number_field :smoke, autocomplete: "smoke", class: "form-control" %>
                     </div>
                     <%end%>
-                    <div class="field mb-4 col-10">
-                        <div class="mb-1">貯金する期間</div>
-                        <div class="row mb-4">
-                            <div class="col-auto">
-                                <%= f.radio_button :time, 0, class:"pb-2" %>
-                                <%= f.label :time_0, "1ヶ月", class:"pb-2" %><br>
-                                <%= f.radio_button :time, 2, class: "pb-2"%>
-                                <%= f.label :time_2, "半年(6ヶ月)", class: "pb-2" %><br>
-                                <%= f.radio_button :time, 4, class: "pb-2"%>
-                                <%= f.label :time_4, "3年", class: "pb-2" %>
-                            </div>
-                            <div class="col-3 offset-1">
-                                <%= f.radio_button :time, 1, checked: "checked", class: "pb-2"%>
-                                <%= f.label :time_1, "3ヶ月", class:"pb-2" %><br>
-                                <%= f.radio_button :time, 3, class: "pb-2"%>
-                                <%= f.label :time_3, "1年間", class: "pb-2"%><br>
-                                <%= f.radio_button :time, 5%>
-                                <%= f.label :time_5, "5年", class: "pb-2" %>
-                            </div>
-                        </div>
 
-                        <div class="field mb-4">
-                            <div class="mb-1">貯金の程度</div>
-                            <%= f.radio_button :degree, 0, class:"pb-2" %>
-                            <%= f.label :degree_0, "少しだけの貯金でいい", class:"pb-2" %><br>
-                            <%= f.radio_button :degree, 1, checked: "checked", class: "pb-2"%>
-                            <%= f.label :degree_1, "無理しない程度で貯金したい", class:"pb-2" %><br>
-                            <%= f.radio_button :degree, 2%>
-                            <%= f.label :degree_2, "少し我慢をしてでも貯金したい" %>
+                    <div class="mb-1 col-10">貯金する期間</div>
+                    <div class="row mb-4 ps-md-5">
+                        <div class="col-md-auto col-6">
+                            <%= f.radio_button :time, 0, class:"pb-2" %>
+                            <%= f.label :time_0, "1ヶ月", class:"pb-2" %><br>
+                            <%= f.radio_button :time, 2, class: "pb-2"%>
+                            <%= f.label :time_2, "半年(6ヶ月)", class: "pb-2" %><br>
+                            <%= f.radio_button :time, 4, class: "pb-2"%>
+                            <%= f.label :time_4, "3年", class: "pb-2" %>
                         </div>
-
-                        <div class="actions mb-4 text-center">
-                            <%=f.submit "目標金額を出力する", class: "btn btn-dark col-7"%>
+                        <div class="col-md-3 col-6 offset-md-1">
+                            <%= f.radio_button :time, 1, checked: "checked", class: "pb-2"%>
+                            <%= f.label :time_1, "3ヶ月", class:"pb-2" %><br>
+                            <%= f.radio_button :time, 3, class: "pb-2"%>
+                            <%= f.label :time_3, "1年間", class: "pb-2"%><br>
+                            <%= f.radio_button :time, 5%>
+                            <%= f.label :time_5, "5年", class: "pb-2" %>
                         </div>
                     </div>
+
+                    <div class="mb-1 col-10">貯金の程度</div>
+                    <div class="mb-4 ps-sm-3 ps-md-5">
+                        <%= f.radio_button :degree, 0, class:"pb-2" %>
+                        <%= f.label :degree_0, "少しだけの貯金でいい", class:"pb-2" %><br>
+                        <%= f.radio_button :degree, 1, checked: "checked", class: "pb-2"%>
+                        <%= f.label :degree_1, "無理しない程度で貯金したい", class:"pb-2" %><br>
+                        <%= f.radio_button :degree, 2%>
+                        <%= f.label :degree_2, "少し我慢をしてでも貯金したい" %>
+                    </div>
+
+                    <div class="actions mb-4 text-center">
+                        <%=f.submit "目標金額を出力する", class: "btn btn-dark col-10 col-md-7"%>
+                    </div>
+                    
                 <%end%>
 
             </div>
