@@ -1,10 +1,10 @@
 <%=render 'layouts/public'%>
     
 <div class="w-100 h-500 bg-pic-com d-flex justify-content-center align-items-center" id="top-bg-first">
-    <div class="h-150 ms-1 ms-sm-0">
+    <div class="h-150 mx-2 mx-sm-0">
         <h1 class="big-topTitle text-light" id="title-slow">貯金をもっと簡単に</h1>
         <p class="pt-1 text-light">Peculissを使って、貯金を簡単に楽しく管理しましょう。</p>
-        <%=link_to "詳しくはこちら", about_path, class: "btn btn-light ms-md-4 pt-1"%>
+        <%=link_to "今すぐ始める", mypage_path, class: "btn btn-light ms-md-4 pt-1"%>
     </div>
 </div>
 
@@ -14,13 +14,13 @@
             <h1 class="text-center text-light">お金の浪費を今すぐに減らせる<br>貯金が簡単にできる<br>そんなアプリを今すぐ試してみませんか？</h1>
             <div class="col-md-3 me-2 mt-md-0 mt-2 mt-md-5">
                 <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
-                <h3 class="text-center text-light pt-3">日常の浪費を簡単に管理</h3>
-                <p class="text-center text-light  pt-2">hogehogehogehogehoge</p>
+                <h3 class="text-center text-light pt-3">日常のお金を簡単に管理</h3>
+                <p class="text-center text-light  pt-2">収支を入力すれば自動で管理します！</p>
             </div>
             <div class="col-md-3 me-2 mt-md-0 mt-3 mt-md-5">
                 <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
                 <h3 class="text-center text-light pt-3">貯金と支出の一括管理</h3>
-                <p class="text-center text-light pt-2">hogehogehogehogehoge</p>
+                <p class="text-center text-light pt-2">効率的な貯金をサポートします</p>
             </div>
             <div class="col-md-3 mt-md-0 mt-3 mt-md-5">
                 <div class="text-center"><i class="fa-solid fa-2xl fa-circle-check" style="color: #f1f614;"></i></div>
@@ -86,8 +86,8 @@
             </div>
             <div class="col-md-6 mt-md-0 mt-4 pt-lg-5">
                 <h3 class="text-center text-light pt-lg-5 fs-40px fs-lg-60px">1円1円を大切に</h3>
-                <p class="text-center text-light  fs-5 pt-3">貯金で人生を豊かに</p>
-                <span class="pt-3"><%=link_to "詳しく", about_path, class: "text-center btn btn-light col-6 offset-3"%></span>
+                <p class="text-center text-light fs-5 pt-3">貯金で人生を豊かに</p>
+                <span class="pt-3"><%=link_to "新規登録", new_user_registration_path, class: "text-center btn btn-light col-6 offset-3"%></span>
             </div>
         </div>        
     </div>

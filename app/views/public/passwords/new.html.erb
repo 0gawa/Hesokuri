@@ -7,18 +7,19 @@
       <h1 class="text-center">パスワードの再設定</h1>
 
       <%= form_with model: @user, url: user_password_path, class:"row justify-content-center" do |f| %>
-        <%= render "public/shared/error_messages", resource: resource %>
-
         <div class="field mt-4 col-10">
-          <%= f.label "登録済みのメールアドレス", class: "pb-1" %><br />
+          <%= f.label :email, "登録済みのメールアドレス", class: "pb-1" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
 
         <div class="actions mt-4 text-center">
-          <%= f.submit "パスワード再設定用リンクを送信する", class: "btn btn-success col-10" %>
+          <%= f.submit "メールを送信", class: "btn btn-success col-7" %>
         </div>
 
         <div class="mt-5 col-10">
+          <% if flash[:notice]%>
+            <p class="text-center mb-1 text-danger"><%= flash[:notice] %></p>
+          <%end%>
           <%= render "public/shared/links" %>
         </div>
       <% end %>
