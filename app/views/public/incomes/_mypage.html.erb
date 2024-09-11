@@ -2,8 +2,8 @@
     <h3 class="text-center pt-2">最近の収入</h3>
     <p class="text-center pt-1">直近5件の収入を表示しています。</p>
 
-    <div class="row mt-3">
-        <div class="col-10 offset-1">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-10 col-11">
             <%if incomes.count==0%>
                 <p class="text-center">まだお金を得ていないようです。</p>
             <%else%>
@@ -11,7 +11,7 @@
                     <div class="border-bottom mb-2 p-2">
                         <div class="mb-1"><span class="pe-1"><%=income.comment%></span>|
                         <span class="ps-1"><%= l income.created_at, format: :short %></span></div>
-                        <div class="fs-5 text-center"><%=income.money%>円</div>
+                        <div class="fs-5 text-center"><%=number_to_currency(income.money, unit: "¥", format: "%u %n" )%>円</div>
                     </div>
                 <%end%>
             <%end%>

@@ -2,8 +2,8 @@
     <h3 class="text-center pt-2">最近の支出</h3>
     <p class="text-center pt-1">直近5件の支出を表示しています。</p>
 
-    <div class="row mt-3">
-        <div class="col-10 offset-1">
+    <div class="row mt-3 justify-content-center">
+        <div class="col-md-10 col-11">
             <%if spends.count==0%>
                 <p class="text-center">まだお金を使っていないようです。</p>
             <%else%>
@@ -11,7 +11,7 @@
                     <div class="border-bottom mb-2 p-2">
                         <div class="mb-1"><span class="pe-1"><%=spend.spend_genre.name%></span>|
                         <span class="ps-1"><%= l spend.created_at, format: :short %></span></div>
-                        <div class="fs-5 text-center"><%=spend.money%>円</div>
+                        <div class="fs-5 text-center"><%=number_to_currency(spend.money, unit: "¥", format: "%u %n" )%>円</div>
                     </div>
                 <%end%>
             <%end%>
