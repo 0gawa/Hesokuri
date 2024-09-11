@@ -123,11 +123,12 @@ class Public::UsersController < ApplicationController
         params.require(:user).permit(:save_money)
     end
 
-    def sum_price(tmp)    #イテラブルである必要があることに注意
-        sum = tmp.sum(:money)
+    # 引数のmoneyカラムの合計を求める
+    # 引数のデータ型が不適当または合計値が０の場合は100を返す
+    def sum_price(data)    #イテラブルである必要があることに注意
+        sum = data.sum(:money)
         if sum.nil? || sum == 0
             sum = 100
         end
-        return sum
     end
 end

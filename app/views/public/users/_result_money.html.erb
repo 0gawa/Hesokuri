@@ -6,7 +6,7 @@
         <p class="fs-2 py-2 text-center">　</p> <%#なにも出力しないための空白%>
         <%else%>
         <p class="fs-2 mb-0 py-2 text-center"><span class="fs-5">あなたのおすすめ目標金額は</span>
-        <%=result.to_i%>円<span class="fs-5">です</span></p>
+        <%=number_to_currency(result.to_i, unit: "¥", format: "%u %n" )%><span class="fs-5">円です</span></p>
         <%end%>
     </div>
 </div>

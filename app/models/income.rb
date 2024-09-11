@@ -9,4 +9,6 @@ class Income < ApplicationRecord
     scope :today, -> { where(created_at: Time.current.all_day) }
     scope :this_week, -> { where(created_at: Time.current.all_week) }
     scope :this_month, -> { where(created_at: Time.current.all_month) }
+
+    protected
 end
