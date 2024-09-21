@@ -41,7 +41,7 @@
 
         <div class="field mt-4 col-10">
           <%= f.label :prefecture, "都道府県", class: "pb-1" %><br />
-          <%= f.select :prefecture, options_for_select(User.prefectures.map { |k, v| [k, v] }), { include_blank: "都道府県を選択してください" }, { class: "form-select" } %>
+          <%= f.select :prefecture, options_for_select(User.prefectures.map { |k, v| [k, k] }), { include_blank: "都道府県を選択してください" }, { class: "form-select" } %>
         </div>
 
         <div class="field mt-4 col-10">
