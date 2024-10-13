@@ -70,6 +70,10 @@ footer{
     background-image: image-url('ai_office.jpg');background-repeat: no-repeat;
     background-size: cover;background-position: center;
 }
+.bg-pic-ai-otoiawase{
+    background-image: image-url('otoiawase.png');background-repeat: no-repeat;
+    background-size: cover;background-position: center;
+}
 
 @media screen and (min-width: 992px) {
     .fs-lg-60px{font-size: 60px;}

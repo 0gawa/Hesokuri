@@ -76,7 +76,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
     end
 
     #追加のパラメーター(devise非搭載)に関するflashメッセージ
-    if !valid_name?(params[:user][:name])
+    if !valid_name?(params[:user][:kan_name])
       flash[:notice] = "名前は2文字以上20字以下にする必要があります" and return
     end
   end
@@ -88,7 +88,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :sex, :job, :age, :is_smoker])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :kan_name, :kana_name, :sex, :job, :age, :is_smoker,
+                                      :prefecture, :region, :phone_number])
   end
 
   def user_state
@@ -108,7 +109,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   def is_filled_form
     is_ok = true
-    if !(params[:user][:email].present? && params[:user][:name].present? && params[:user][:password].present? && params[:user][:password_confirmation].present?)
+    if !(params[:user][:email].present? && params[:user][:kan_name].present? && params[:user][:password].present? && params[:user][:password_confirmation].present?)
       is_ok = false
     end
     if !(params[:user][:sex].present? && params[:user][:job].present? && params[:user][:age].present? && params[:user][:is_smoker].present?)

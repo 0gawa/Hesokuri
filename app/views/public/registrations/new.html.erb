@@ -8,14 +8,15 @@
       <h1 class="text-center">新規登録</h1>
 
       <%= form_with model: @user, url: registration_path(resource_name), class:"row justify-content-center mt-5" do |f| %>
+
         <div class="field col-10">
-          <%= f.label :email, "メールアドレス", class: "pb-1" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <%= f.label :kan_name, "名前", class: "pb-1" %><br />
+          <%= f.text_field :kan_name, autocomplete: "kan_name", class: "form-control" %>
         </div>
 
         <div class="field mt-4 col-10">
-          <%= f.label :name, "名前", class: "pb-1" %><br />
-          <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+          <%= f.label :kana_name, "名前(フリガナ)", class: "pb-1" %><br />
+          <%= f.text_field :kana_name, autocomplete: "kana_name", class: "form-control" %>
         </div>
 
         <div class="field mt-4 col-10">
@@ -38,6 +39,26 @@
           <%= f.select :job, options_for_select(User.jobs.map { |k, v| [t("enums.user.job.#{k}"), k] }), { include_blank: "職業を選択してください" }, { class: "form-select" } %>
         </div>
 
+        <div class="field mt-4 col-10">
+          <%= f.label :prefecture, "都道府県", class: "pb-1" %><br />
+          <%= f.select :prefecture, options_for_select(User.prefectures.map { |k, v| [k, k] }), { include_blank: "都道府県を選択してください" }, { class: "form-select" } %>
+        </div>
+
+        <div class="field mt-4 col-10">
+          <%= f.label :region, "市区町村", class: "pb-1" %><br />
+          <%= f.text_field :region, autocomplete: "region", class: "form-control" %>
+        </div>
+
+        <div class="field mt-4 col-10">
+          <%= f.label :phone_number, "電話番号", class: "pb-1" %><br />
+          <%= f.text_field :phone_number, autocomplete: "phone_number", class: "form-control" %>
+        </div>
+
+        <div class="field mt-4 col-10">
+          <%= f.label :email, "メールアドレス", class: "pb-1" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+        
         <div class="field mt-4 col-10">
           <span class="">喫煙をしますか？</span><br>
           <%= f.radio_button :is_smoker, true, class:"" %>
