@@ -33,7 +33,7 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   def reject_user
-    if !params[:user][:email].present? || !params[:user][:password].present? || !params[:user][:name].present?
+    if !params[:user][:email].present? || !params[:user][:password].present?
       flash[:notice] = "すべてに入力する必要があります"
       return
     end
@@ -45,8 +45,6 @@ class Public::SessionsController < Devise::SessionsController
         redirect_to new_user_session_path
       elsif !@user.valid_password?(params[:user][:password])
         flash[:notice] = "パスワードが間違えています"
-      elsif params[:user][:name] != @user.name
-        flash[:notice] = "名前が間違えています"
       end
     else
       flash[:notice] = "メールアドレスが間違えています"

@@ -3,6 +3,19 @@
 #
 # Examples:
 #   Character.create(name: "Luke", movie: movies.first)
+User.create!(
+    email: "test@test.com",
+    password: "111111",
+    kan_name: "test",
+    kana_name: "test",
+    sex: 1,
+    age: 21,
+    job: 2,
+    prefecture: 3,
+    region: "hello",
+    phone_number: "0101111"
+)
+
 Admin.create!(
     email: "test@test.com",
     password: "111111",

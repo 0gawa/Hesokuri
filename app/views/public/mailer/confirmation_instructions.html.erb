@@ -1,5 +1,20 @@
-<p>Welcome <%= @email %>!</p>
+<p>※このメールは自動送信メールです。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= @email %> 様</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>Peculiss事務局でございます。</p>
+<p>この度は、Peculissの実証実験にご協力いただきありがとうございます。</p>
+
+<p>下記リンクからアカウントメールのご確認をお願いいたします。</p>
+<p><%= link_to 'アカウントメールの確認はこちら', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>※このメールは返信しても届きません。</p>
+
+<p>もし、このメールに覚えがない場合は破棄していただいても構いません。</p>
+
+
+<p>――――――――――――――――――――――――――――――</p>
+<p>Peculiss</p>
+
+<p>実証実験中</p>
+<p>――――――――――――――――――――――――――――――</p>

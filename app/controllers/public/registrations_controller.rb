@@ -8,13 +8,20 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "ユーザー認証メールを送信いたしました。認証が完了しましたらログインをお願いいたします。"
+      redirect_to new_user_session_path
+    else
+      flash[:alert] = "ユーザー登録に失敗しました。"
+      render action: :new and return
+    end
+  end
 
   #新規登録後、支出項目を自動作成
   def create_spendGenre
-    @limit_number = 7
+    @limit_number = 7 #新規登録可能最大県数
     if current_user.nil? || current_user.spend_genres.count >= @limit_number
       return 
     else
@@ -127,5 +134,10 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def user_params
+    params.require(:user).permit(:email, :kan_name, :kana_name, :sex, :job, :age, :is_smoker,
+      :prefecture, :region, :phone_number, :password, :password_confirmation)
+  end
 
 end
