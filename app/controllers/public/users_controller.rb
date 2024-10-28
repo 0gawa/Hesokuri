@@ -39,6 +39,7 @@ class Public::UsersController < ApplicationController
         @result=0
     end
 
+    # 要修正箇所
     def create_money
         if params[:user][:income].nil? || params[:user][:bonus].nil?
             flash.now[:warning]="収入額とボーナスは必ず入力してください"
@@ -107,9 +108,7 @@ class Public::UsersController < ApplicationController
     end
 
     def withdrawal
-        user = User.find(current_user.id)
-        user.update(is_unsubscribed: true)
-        reset_session
+        User.find(current_user.id).destroy
         flash[:notice] = "退会しました。"
         redirect_to root_path
     end

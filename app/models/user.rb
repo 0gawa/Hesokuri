@@ -1,15 +1,14 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[line] ,:authentication_keys => [:email, :name]
+         :omniauthable, omniauth_providers: %i[line] ,:authentication_keys => [:email]
 
   has_many :incomes, dependent: :destroy
-  has_many :cards, dependent: :destroy
   has_many :spends, dependent: :destroy
   has_many :spend_genres, dependent: :destroy
-  has_many :per_monthes, dependent: :destroy
+  has_many :per_months, dependent: :destroy
 
   enum sex: {man: 0, woman: 1, others: 2}, _prefix: true
   enum job: {executive: 0, company_employee: 1, temporary_employee: 2,
