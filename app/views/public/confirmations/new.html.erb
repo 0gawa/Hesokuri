@@ -1,16 +1,26 @@
-<h2>Resend confirmation instructions</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
+<%=render 'layouts/public'%>
+<div class="container">
+<div class="row d-flex justify-content-center">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <div class="col-11 col-md-5 py-5 bg-light bg-circle">
+        <h2 class="text-center">メールアドレスの変更</h2>
+
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "public/shared/error_messages", resource: resource %>
+
+          <div class="field col-10">
+            <%= f.label :email, "メールアドレス", class: "pb-1" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          </div>
+
+          <div class="actions mt-4 text-center">
+            <%= f.submit "メールアドレス変更受付メールを送信する", class: "btn btn-dark col-10" %>
+          </div>
+        <% end %>
+
+        <%= render "public/shared/links" %>
+    </div>
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "publics/shared/links" %>
+</div>

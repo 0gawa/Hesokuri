@@ -1,10 +1,16 @@
-<p>Hello <%= @email %>!</p>
+<p>※このメールは自動送信メールです。</p>
+
+<p><%= @email %> 様</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
 <% else %>
   <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
 <% end %>
+
+<p>※このメールは返信しても届きません。</p>
+
+<p>もし、このメールに覚えがない場合は破棄していただいても構いません。</p>
 
 
 <p>――――――――――――――――――――――――――――――</p>

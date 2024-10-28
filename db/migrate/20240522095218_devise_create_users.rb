@@ -29,6 +29,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
+
+      # ソーシャル認証用
+      t.string :provider
+      t.string :uid
+
       t.integer :sex, null: false
       t.string  :kan_name, null: false
       t.string  :kana_name, null: false
@@ -36,7 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.integer :age, null: false
       t.integer :job, null: false
       t.integer :prefecture, null: false
-      t.string :region, null: false
+      t.string  :region, null: false
       t.integer :money, default: 0
       t.integer :alert
       t.integer :save_money, default: 0

@@ -108,9 +108,7 @@ class Public::UsersController < ApplicationController
     end
 
     def withdrawal
-        user = User.find(current_user.id)
-        user.update(is_unsubscribed: true)
-        reset_session
+        User.find(current_user.id).destroy
         flash[:notice] = "退会しました。"
         redirect_to root_path
     end

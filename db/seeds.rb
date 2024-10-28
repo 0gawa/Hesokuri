@@ -13,7 +13,9 @@ User.create!(
     job: 2,
     prefecture: 3,
     region: "hello",
-    phone_number: "0101111"
+    phone_number: "0101111",
+    is_smoker: true,
+    confirmed_at: Time.now
 )
 
 Admin.create!(
